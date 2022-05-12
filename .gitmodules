@@ -1,0 +1,3 @@
+[submodule "Circuit Design/enzyme"]
+	path = Circuit Design/enzyme
+	url = git@github.com:Merophy/enzyme.git
