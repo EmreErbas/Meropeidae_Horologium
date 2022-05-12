@@ -1,0 +1,917 @@
+(kicad_sch (version 20211123) (generator eeschema)
+
+  (uuid e63e39d7-6ac0-4ffd-8aa3-1841a4541b55)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 142.24 21.59) (size 22.86 81.28) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid 443bc73a-8dc0-4e2f-a292-a5eff00efa5b)
+    (property "Sheet name" "LED Driver" (id 0) (at 142.24 20.8784 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "controller.kicad_sch" (id 1) (at 142.24 103.4546 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (pin "SW9" input (at 165.1 30.48 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 373ff2fb-388c-46d1-83b8-f4c1560e00ed)
+    )
+    (pin "SW11" input (at 165.1 25.4 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 3a8e18ab-9c00-4817-9b93-ec39d1050a06)
+    )
+    (pin "SW10" input (at 165.1 27.94 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 3b9c2964-fe1c-4027-903a-3b073f4a6fa1)
+    )
+    (pin "SW8" input (at 165.1 33.02 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 3d50e071-8ea6-4ad8-9b76-6253cb90a0fb)
+    )
+    (pin "SW7" input (at 165.1 35.56 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 9552cc52-3d5b-424e-a208-c711ef0c2f2e)
+    )
+    (pin "SW5" input (at 165.1 40.64 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 68b0b3d9-a5ea-4d1b-905b-6932318878ce)
+    )
+    (pin "SW2" input (at 165.1 48.26 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid e1525bdd-2840-43f5-9e91-81cd38892a2b)
+    )
+    (pin "SW4" input (at 165.1 43.18 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 0441560a-b1c9-4538-bc7c-8b0cc492327c)
+    )
+    (pin "SW3" input (at 165.1 45.72 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 17535494-6a1d-46c6-ae79-ce3984143be8)
+    )
+    (pin "SW1" input (at 165.1 50.8 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 254896cf-6b83-40a7-924d-b130ddb5ecaf)
+    )
+    (pin "SW6" input (at 165.1 38.1 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid d20046a2-3c4e-44cc-ab2c-cab01f1ca2fb)
+    )
+    (pin "CS18" input (at 165.1 55.88 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 1ebae60b-e026-436a-aba7-5100865e6f44)
+    )
+    (pin "CS17" input (at 165.1 58.42 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 51aeda9e-a089-4969-9d86-fb532d66078c)
+    )
+    (pin "CS16" input (at 165.1 60.96 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 791838cd-7299-49b7-a419-950027166e45)
+    )
+    (pin "CS15" input (at 165.1 63.5 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid bc68d1dd-c9c5-47fb-a705-c9b62969cfc7)
+    )
+    (pin "CS14" input (at 165.1 66.04 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid c2e04c41-852d-40a8-af56-966a321acf5b)
+    )
+    (pin "CS11" input (at 165.1 73.66 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid e99c8a8d-5d87-4684-84e9-71442c78e864)
+    )
+    (pin "CS10" input (at 165.1 76.2 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 2ee1636e-40ea-45d0-a3d0-847c369ee96f)
+    )
+    (pin "CS6" input (at 165.1 86.36 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 83ac819d-dfbc-422a-a76f-f95cac775ba2)
+    )
+    (pin "CS5" input (at 165.1 88.9 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid dc4480cc-a194-4c95-b8c1-b47f40461d1a)
+    )
+    (pin "CS3" input (at 165.1 93.98 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid f0e86aa3-1a4d-4bf8-84be-680622ea870a)
+    )
+    (pin "CS4" input (at 165.1 91.44 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid cab4324b-4e5f-4800-9eb9-af33725f6420)
+    )
+    (pin "CS2" input (at 165.1 96.52 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid bb0cd380-bb19-405e-8788-bb565f9667a1)
+    )
+    (pin "CS1" input (at 165.1 99.06 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid a43bd0ca-e124-484f-a3a0-b4aafeb0e572)
+    )
+    (pin "CS9" input (at 165.1 78.74 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid c2e3be15-ede1-4026-84c1-4e22811d1263)
+    )
+    (pin "CS8" input (at 165.1 81.28 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid b603e6c7-e4a1-47fc-9b18-193c21a4aa73)
+    )
+    (pin "CS7" input (at 165.1 83.82 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 5db9243d-c7d2-493d-95d4-920cc6c5f44c)
+    )
+    (pin "CS13" input (at 165.1 68.58 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid ec4cce5b-f3b4-47e0-b122-a7286d45eb07)
+    )
+    (pin "CS12" input (at 165.1 71.12 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid c1faf3eb-4640-4efd-a46e-eaaff364a07f)
+    )
+  )
+
+  (sheet (at 168.91 21.59) (size 22.86 81.28) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid d6438a44-b742-48ae-b52f-11da0511314b)
+    (property "Sheet name" "Screen" (id 0) (at 168.91 20.8784 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "matrix.kicad_sch" (id 1) (at 168.91 103.4546 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (pin "CS15" input (at 168.91 63.5 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 32cf4f21-42e5-4fb6-841d-f55c529f1ef7)
+    )
+    (pin "CS16" input (at 168.91 60.96 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 7da43772-0b03-4d8a-bcfa-fcc7536f9588)
+    )
+    (pin "CS12" input (at 168.91 71.12 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 73264aff-ef1d-4ee3-a2d5-7df0c41c07b7)
+    )
+    (pin "CS13" input (at 168.91 68.58 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid d962dc9a-b062-4586-bb1d-73f392d6c26e)
+    )
+    (pin "CS14" input (at 168.91 66.04 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid dd9d80b1-9301-4ce3-bbe0-6537090b6a70)
+    )
+    (pin "CS17" input (at 168.91 58.42 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid ea637adc-0270-4391-b200-e2fd18b19bcc)
+    )
+    (pin "CS18" input (at 168.91 55.88 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 55b6c8b2-58a8-4efc-9a0b-302f476c10ff)
+    )
+    (pin "CS10" input (at 168.91 76.2 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 80927a91-bbf6-4bf5-822e-4527da1548d3)
+    )
+    (pin "CS11" input (at 168.91 73.66 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 1850655f-d0a8-4b6b-b339-66d22308e783)
+    )
+    (pin "CS8" input (at 168.91 81.28 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 41453a63-cbdc-4aed-b1cc-b9f5cb9b6c63)
+    )
+    (pin "CS9" input (at 168.91 78.74 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid fe3193ed-a642-4518-8199-bff3a1171eb1)
+    )
+    (pin "SW10" input (at 168.91 27.94 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 61d6979a-3810-4276-8cd0-875b21dbcf7f)
+    )
+    (pin "SW11" input (at 168.91 25.4 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 28254f7b-744f-4f8e-8302-330e73b641c1)
+    )
+    (pin "SW5" input (at 168.91 40.64 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid e2a9fb46-02be-435e-bfa2-5f2ce04d1adb)
+    )
+    (pin "SW7" input (at 168.91 35.56 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 9d2af656-9bec-4c13-953b-2fc06a87f2f7)
+    )
+    (pin "SW6" input (at 168.91 38.1 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 069b3e57-b513-4e4d-8e50-685de2535fad)
+    )
+    (pin "SW9" input (at 168.91 30.48 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid a5033ea9-48c2-498e-a5d6-e0bf316c183b)
+    )
+    (pin "SW8" input (at 168.91 33.02 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 3006ef63-9627-4d44-9be0-1ad2d6ba9d6f)
+    )
+    (pin "SW1" input (at 168.91 50.8 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 03c3a2a2-194f-41dd-84e5-8072724b056c)
+    )
+    (pin "SW2" input (at 168.91 48.26 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 9ccab742-3b44-4f07-b9ec-e9b6ee059a8f)
+    )
+    (pin "SW3" input (at 168.91 45.72 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid d86c6089-c678-40e4-916c-6a603f0ee7b0)
+    )
+    (pin "SW4" input (at 168.91 43.18 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 877db1f9-5316-4064-ad5b-0dfa70d1a6f9)
+    )
+    (pin "CS4" input (at 168.91 91.44 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 25ecd883-51f5-4aac-b2f6-426d22fce021)
+    )
+    (pin "CS5" input (at 168.91 88.9 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 8f1c6893-d5da-46e4-a929-6db278c72b06)
+    )
+    (pin "CS2" input (at 168.91 96.52 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid e8b9a048-ad46-4d42-a11b-0756840f4699)
+    )
+    (pin "CS3" input (at 168.91 93.98 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 883485b0-1579-49f5-8ccf-7a559b0b819e)
+    )
+    (pin "CS1" input (at 168.91 99.06 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid a11b20bd-ab14-4880-9fad-40da66963382)
+    )
+    (pin "CS6" input (at 168.91 86.36 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 2507ba82-1b86-4d4e-80c6-f8a785661fbe)
+    )
+    (pin "CS7" input (at 168.91 83.82 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid cb3fcb95-0a31-4526-be66-3239b52dd18e)
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b" (page "2"))
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b" (page "3"))
+  )
+
+  (symbol_instances
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/73edbf33-e785-40a1-8bc4-5b8e60e97a30"
+      (reference "#PWR0101") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/1aace8d2-4112-471f-af0d-b0e5f9e8460a"
+      (reference "#PWR0102") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/9796b69f-8c29-410d-b832-b9c41854d6cc"
+      (reference "#PWR0103") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/3b1c616c-322e-4217-b134-1b51fcfc2e5e"
+      (reference "#PWR?") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/3bd9a22f-108f-4ca2-8bbd-7bf694c89ea9"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/5c36de51-1329-4741-b8b4-b64a5b62eb00"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/bc095920-70af-41e5-ad73-ffafb04f52ba"
+      (reference "#PWR?") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/d77fad06-c9be-4b01-80fe-6d13e30be294"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/fd379091-f1d6-46c6-b404-7a9d1a5b7385"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/2d88d6aa-908e-4096-abfa-3b70fa724210"
+      (reference "C?") (unit 1) (value "100nF") (footprint "CoF_Capacitor:C-0402")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/7d3790dc-ce9c-4d0c-a875-f0f755773e5f"
+      (reference "C?") (unit 1) (value "1uF") (footprint "CoF_Capacitor:C-0402")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/bb85f7b9-2051-4082-9957-737ba7c0edea"
+      (reference "C?") (unit 1) (value "100nF") (footprint "CoF_Capacitor:C-0402")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/c31d93fe-1d3d-42c2-a94e-f1a43a0d461d"
+      (reference "C?") (unit 1) (value "100nF") (footprint "CoF_Capacitor:C-0402")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/cb66583a-52d0-45e6-94ac-aba00d4d5a2c"
+      (reference "C?") (unit 1) (value "1uF") (footprint "CoF_Capacitor:C-0402")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/f16a1296-1381-4c56-a9e1-1521cb454742"
+      (reference "C?") (unit 1) (value "100nF") (footprint "CoF_Capacitor:C-0402")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/0048b8ad-f9a4-427a-a636-db4088d1c8e7"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/005cd787-65fe-4c46-a571-310419da95c8"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/02da5fee-78ad-4419-af4b-b2fe6c320c58"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/03a6bee1-9789-4aa2-b547-823a0257e51d"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/04c9693a-51a9-416d-9bfe-3f479b261a07"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/04d3cf79-7135-49a5-9d88-d680caf03e13"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/091da403-f082-4c7c-838c-d9fb446a8e79"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/0a6fdc52-fd8d-46be-adf7-eb81d043ee5d"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/0bdee04a-427f-4e8b-b795-5d22a18ad7c9"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/110e574e-68fc-4ce7-94d2-02dc9fce62da"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/11a6cb4d-7b11-4443-a23c-cf58e27ac77f"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/13725ea7-3ff4-49de-9312-1ccadab58af0"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/13d125ee-70bd-4a74-8e47-386d2abb98ed"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/156be492-0d18-4d62-82bb-ec22087c87cc"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/17b41ccc-1ada-4208-ac5d-d361c0edda2c"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/17d8d608-296c-4094-9f40-959000184c7b"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/17f8091d-dd78-41ae-8a02-5f7b3e53099f"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/1d3edfa6-671b-4137-bde6-e19b78959cb4"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/1f584cc9-4ff5-4fce-b7ea-18043feb5255"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/1f8f0aee-7ffc-4626-8dc3-699e49c8f04e"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/22a0b699-99cd-43d8-a526-eea707686cfa"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/23526772-f1f5-471d-9f5d-39d5f06370e2"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/24155a22-4810-4537-b7e6-2937cf2e4ac6"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/24e94d11-57ba-4b8f-84d7-c20d4c8d74ff"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/27ea055e-503f-4b2d-8100-323a65f53f02"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/29294528-6b46-4388-b142-4b70324004d7"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/29c83d07-82b4-48f9-a223-1fc5692e48a5"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/29de32be-a31f-4aa8-b6b3-6d0dbaadd9bc"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/2a313d7d-aa7f-425a-bd99-5024cc4eab1e"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/2a700374-8004-4ac1-a46c-f62493c43388"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/2d7e9592-6234-4bbe-b32a-77b3256b08b4"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/2e14b0ee-56c4-45e2-b073-c073eac864d7"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/2e739c31-c63f-4914-bd3e-6a59be10d194"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/2e9fe2aa-647f-4e19-b1bc-694054740bf7"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/2f372437-3c23-44a3-8757-06bf3d00f3f3"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/2fb8e9e1-bc86-4f05-b885-24189aa034d9"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/30d97de6-89d4-4e7f-ad27-f156e37078cc"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/31bd3829-7e71-4857-8e6f-7b14d1dc382c"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/32114239-d952-4b71-82cf-399466660a7c"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/32991ccc-7533-438e-a898-ed42a36efbcb"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/345963ea-39f7-4891-a5bc-aaad0a3a2541"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/3aa4c2b4-a930-4461-a918-4cfb2f71f452"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/3b109ce7-2917-4dba-9dc6-11dc079a86bf"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/40817529-4e37-4f52-b3db-2d11929c9af9"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/427e8428-4295-46c6-aadc-4c89959fece7"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/434c478f-7656-460b-a534-3ca2bbb781e5"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/4425207f-f4f1-462b-8e0f-c07dc84aee15"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/4b690bcb-5e9f-4188-972f-807585545e2d"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/4c03d0ab-7d5e-445a-a321-06e77142d533"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/4c56ba17-8b1d-440d-8271-a361bd7ad1c9"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/4d236a07-b462-4cbe-b063-5caea363d482"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/4fde83c9-0bdc-435e-9014-c20c37d4e88d"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/5076da4a-2369-4dfe-9804-3835c7fc5ecc"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/5251fd2b-5972-4e92-9b84-eaa6ee131cfc"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/525b12ba-3b11-4028-8c07-eb2019fc3105"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/527b4c01-9855-4768-8b67-b59d33ec9365"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/52f74902-d177-4333-b5ea-9ca61cbb972f"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/537d1c9b-3afb-4d74-89ea-845a74132e9b"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/53a1e2f9-7e76-4aa3-a672-53e2139212e6"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/54af0695-5d9b-4de4-9089-7bd24e16a020"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/587a1d23-58f2-4ccd-aeae-3106fcd247ec"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/59edfa71-d8b9-46e9-a5b5-48949d2dc9b2"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/5a42a455-ff7e-4b8f-acaa-6e2a6b39de64"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/5a5be3ce-4bad-48ef-a1ad-a048aabafe01"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/5aeaacb7-3a67-4b73-8482-2949a78cce48"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/5b11e363-3a8e-4133-b7b2-6de2813fd2ea"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/5b456815-159b-45ff-a168-8a8186c5d7bb"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/5d1a335d-41e6-4a87-be1c-ed8c9ee9d720"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/5d566187-d66f-4655-983a-d61b757b4cae"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/5ed43801-2829-4440-bcdb-8dd1df55cfa7"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/5f6f5e90-6120-487b-b624-bc30352a409c"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/5f866247-2178-45ce-84c3-9b613b3e7bd4"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/602d79cb-3823-4b56-9472-cc15ae773897"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/60e65157-6597-4aec-adc2-ade58cf927bc"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/60fc1129-a028-46d2-81dd-43954f12040c"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/63e26e4e-0e2f-441a-af33-fa43912b29bb"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/683e9312-0e1b-4c84-927e-349c95751da2"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/6902c0b7-bd01-44ae-9bb4-55b35497bbbd"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/69d9e5fc-7f36-4254-aa15-130b7353293e"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/6ad85f22-4176-4d05-a7c1-acba1f482856"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/6b23f4c7-6673-4b86-b818-e0de3165097c"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/6bd830f3-4da8-4ce6-ab57-4c9e4b886a7a"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/7047da1c-c877-4deb-a176-c258c29a590a"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/7111e72c-2cad-4f7e-899c-9f3e70ee979b"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/71401846-5301-4554-835d-7226133da71c"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/71bac992-1fba-44d4-aa63-735c124eb5a8"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/71f64b1e-05f1-41f6-a89d-ef36d4c6390c"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/72cce326-2513-47b6-add6-0b4186bc635d"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/72d01ab9-0d7a-443e-a0c6-25fa5ffefeea"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/7519ee7d-dd95-4a92-9a05-e6ea22ae58b9"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/751eff1f-7fe5-4ade-859a-752f7668c05c"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/755615e0-cd19-4c18-855c-1f96d8867e19"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/799d7b2f-4caf-4154-8d63-de8276b5f911"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/7d2688f5-24e5-4bcd-9985-e0ccaf30e288"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/7dd9f553-a11a-48b3-ae22-75963e4ed3ba"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/7eac7ac9-73d2-4199-b899-2d8c822cb466"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/833fa6be-0ec2-47e3-aefd-9251940f00c0"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/84936e46-e78e-42a3-81c7-edc813ab552b"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/85949638-acc6-4bb2-a1dd-bf0a875317b8"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/869089b8-bb2b-41c2-b629-2859170ee038"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/873d9b15-7963-4b3e-81de-a92df07518a1"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/87f4dc15-f1f6-4d69-bea0-76843df79e96"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/888b5741-0158-4e95-8cdb-8ad85732ff39"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/889fba23-9d2a-42e0-87f0-5c7100212537"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/899e4eec-3748-47b3-b5fe-fc4175c77d9d"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/8aad2576-b72a-49af-bebf-f22d13fdec58"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/8ab13609-ce92-4711-86bc-26b79cf28594"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/8b6134a5-8152-482e-b9a0-353fda4d2df1"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/8cb35236-fe69-4690-9030-6c8dc3a07af3"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/8cd6031a-e09b-46a8-950d-51fa4263b9a9"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/8ce79850-d9b5-4301-b324-b3143c06067e"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/8e4fcb49-d73e-4bf0-8aa6-80df8f8cb818"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/8f481413-b859-4d47-bae5-72752b837994"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/9051da9b-2062-4d44-af23-16eacf1337e2"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/915f28d7-15f7-4eb5-9343-da478d51ae13"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/92a052b6-cfc9-41a4-839f-a0cf6b87cea9"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/95550645-5de1-411a-bff2-cd176a82dd2c"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/966b9f75-860e-4534-8a82-5ce868e47af4"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/986dd4bf-141c-4afd-baa3-cbab202b21ed"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/9984fead-d780-496f-84ca-f9fcc3e0f313"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/9c08621f-994c-4a54-b5f1-8ad670b8e494"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/9d07338f-6e35-4632-a176-deaf6ff5a546"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/9ec49aed-983c-4f37-a6a2-7ca125df453c"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/9ef264df-36b6-4593-abd2-2f323bf22df5"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/a19efa54-902a-425a-9a67-5381f20489f5"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/a4f1e0ef-0f4b-4613-885f-a7498585b193"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/a629ae5b-8956-42cd-a4bd-d65a12eb27cb"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/a8036513-e34d-4085-a56c-861267161799"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/aa4326aa-55db-40ae-860d-1fe740454489"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/aaf249af-67ee-4ae8-be3f-f04eae04d8ff"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/ab4d413f-2013-4cd9-a607-038036e4f90f"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/ac29e75d-d11f-4e2b-8339-435878a56fcd"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/ade51e59-9ec6-49ea-9a99-6acd286778b1"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/aed50ef9-add4-4bc0-be46-d56c361bf341"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/afe5a8f8-cf9c-4b39-a1f5-a9876ab3db6a"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/b10ff8f4-fa5a-4d49-af8a-c2dcbb2e17a8"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/b372bf35-9c0e-43c5-b837-1c5380421f0a"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/b3decc69-1538-4274-93b1-13ded549bd30"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/b4f75203-b124-419b-bd9a-e2c939d8d801"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/b8816302-9f92-4bb3-a24b-cde3b4174cba"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/ba654746-c357-4558-af11-7364e3cfa9fb"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/bd0fa810-6dae-4e66-bfbb-6b550003cfd9"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/be09ff2f-0f78-4396-ad05-ec6079a55619"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/c182a83d-9064-42d0-bb3a-34b6d279c99e"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/c2c5c428-ee65-4187-8a4b-18c5b58c530c"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/c3a25edf-1733-4dba-819a-4f698f17ba6b"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/c3f1486b-2efb-4347-a832-02b0daa122f4"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/c53d36c0-da1b-4d55-9f86-e63ac30daf17"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/c63ea3e2-27f4-4d38-82c2-2c44abbc5fbb"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/c72a1bbd-11b3-4e07-b283-53e39a680488"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/c7905487-a5bd-47d4-b4cf-729c21d4e35f"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/c7c1177b-8dfd-42df-87ac-36e81d4f6f3a"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/c8df5a9a-f0cf-46e8-b81b-fa2594e582e3"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/c9566bf0-d218-4580-83c0-0395e4b48ccb"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/ca8549a6-d357-448a-84ee-6699ae01f73e"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/ca986541-0807-41e1-b09a-4be18cf22240"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/cabbf197-f850-4cf3-be2a-b5a43b3de132"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/cacff742-aabb-4544-a254-370da2868853"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/caf694db-bc5a-4a5d-ac26-16938880103c"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/d3c9ce02-83ae-47f9-8eb5-0b6025ef0304"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/d3dff547-deb9-42e0-95bf-350114e44227"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/d3e86378-ea0b-4a39-a21a-76299db3a913"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/d52f7394-0eb4-4ebc-88f8-9b877801dd86"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/d65478a2-2400-404e-bb56-d5b1903cad21"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/d6d73887-384f-4e96-aea8-e4d04599ba4d"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/d75ffa32-0997-48a3-a371-15ccc276ed22"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/d7be5b5d-729d-48a8-a438-5824f6f58ce7"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/d83adeb1-3263-4cd9-bb07-f4d83244aade"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/d96ecac1-4295-4ef5-b80c-89d1acc2d7e7"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/dabf086f-4c30-4a3a-bac8-c47b66263656"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/dad81372-d46c-4ce0-8bcb-0ab9e53c81c7"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/db2d138d-4b67-4a71-9740-5cfe5a555732"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/dcab7e3d-223e-41fc-a966-74f7045d36fd"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/ddc22c04-d69b-4eb4-974a-0e1bd37a9617"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/de7cb5c7-bd49-4344-a722-8e9f4633f69d"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/df2fe38a-1996-4f7f-8d76-97dc8a05ec67"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/e11a0b06-c501-4d72-bff4-0e1b41076575"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/e24e0afb-5c12-4a2c-85ef-6ad609bad640"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/e2c26b17-2ea5-442d-b7a9-2968d72f6eae"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/e49d32a1-a17b-4dac-bef3-48e4417d0f32"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/e4f6b5f0-6687-48a3-8c17-3a8ac94b4f5f"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/e5a1431e-4265-4141-8184-77c372b71a31"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/e635fe30-7a88-4636-b37e-edae2dd48da7"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/ea6ed509-8edd-431e-938e-7451d50d09e8"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/eb15d02f-e4bb-4213-91ce-2cacee11f68e"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/ebd6e25c-2ce0-450f-af7a-4b79c90dd652"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/ed60a026-734e-457c-95fa-e6cf74aac523"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/f06424c9-3b5c-4f09-a44d-d6bfd3f680c9"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/f10b19b1-9c93-498e-96fb-93428897d571"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/f1dd5419-2c97-41dd-910b-71661b574e6d"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/f2cc712d-4e07-42a7-b67d-1200f6f6411e"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/f2e72f3d-6520-46e7-b18c-11250dbceee2"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/f4edbbc3-d475-4495-ac29-84bd3caf258b"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/f715bd5c-ede9-4d7f-a36b-ac6ee566bb01"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/f8e01b35-a28a-4f33-901f-eaf8a7cee85e"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/fb4a17dc-b836-4930-be49-c3c22bc4aa9b"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/fc2f2221-df48-4a8e-9d2d-6acb70ab0ea6"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/d6438a44-b742-48ae-b52f-11da0511314b/fd1558e2-11a9-42a8-8ff5-ffea2e823094"
+      (reference "D?") (unit 1) (value "LED_A") (footprint "CoF_Diode:LED-0603")
+    )
+    (path "/443bc73a-8dc0-4e2f-a292-a5eff00efa5b/12f6152f-74cc-48c7-b206-2108be79325e"
+      (reference "U?") (unit 1) (value "IS31FL3743A") (footprint "Package_DFN_QFN:QFN-40-1EP_5x5mm_P0.4mm_EP3.8x3.8mm")
+    )
+  )
+)
