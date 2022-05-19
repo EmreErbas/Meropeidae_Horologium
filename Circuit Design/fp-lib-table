@@ -1,0 +1,7 @@
+(fp_lib_table
+  (lib (name "CoF_Capacitor")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-footprints/CoF_Capacitor.pretty")(options "")(descr ""))
+  (lib (name "CoF_Connector")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-footprints/CoF_Connector.pretty")(options "")(descr ""))
+  (lib (name "CoF_Diode")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-footprints/CoF_Diode.pretty")(options "")(descr ""))
+  (lib (name "CoF_QuadFlat")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-footprints/CoF_QuadFlat.pretty")(options "")(descr ""))
+  (lib (name "CoF_Resistor")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-footprints/CoF_Resistor.pretty")(options "")(descr ""))
+)
