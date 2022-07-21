@@ -437,36 +437,12 @@
       ""
     ],
     [
-      "443bc73a-8dc0-4e2f-a292-a5eff00efa5b",
-      "LED Driver"
-    ],
-    [
-      "d6438a44-b742-48ae-b52f-11da0511314b",
-      "Screen"
-    ],
-    [
-      "958ffef9-560e-4e95-a813-dcd48f7e4275",
-      "LED Driver1"
-    ],
-    [
-      "43521194-6ab6-4ae4-a5a9-4c2c9d5cca0f",
-      "Screen1"
-    ],
-    [
       "c4aba4db-1142-4267-8831-4a69eb7ce431",
-      "LED Driver2"
+      "LED Driver"
     ],
     [
       "36dd7e98-2bf1-4d3f-a3f4-692acc5204a2",
       "Screen2"
-    ],
-    [
-      "b097e09d-2527-4951-8628-b4003ef3c311",
-      "LED Driver3"
-    ],
-    [
-      "b5e5c196-b9b0-432f-9893-3fcf04f2f3c7",
-      "Screen3"
     ]
   ],
   "text_variables": {}
