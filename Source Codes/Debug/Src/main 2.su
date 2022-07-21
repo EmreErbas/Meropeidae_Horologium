@@ -1,0 +1,10 @@
+../Inc/nixie.h:141:20:NixiBusInit	24	static
+../Inc/nixie.h:250:20:superUserRunForever	32	static
+../Inc/nixie.h:392:23:ScanNixieNodes	544	static
+../Src/main.c:79:5:main	88	static
+../Src/main.c:138:6:SystemClock_Config	88	static
+../Src/main.c:182:13:MX_I2C1_Init	8	static
+../Src/main.c:216:13:MX_TIM2_Init	32	static
+../Src/main.c:261:13:MX_TIM3_Init	32	static
+../Src/main.c:306:13:MX_GPIO_Init	48	static
+../Src/main.c:335:6:Error_Handler	4	static,ignoring_inline_asm
