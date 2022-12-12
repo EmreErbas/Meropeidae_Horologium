@@ -110,7 +110,7 @@
         "min_microvia_diameter": 0.19999999999999998,
         "min_microvia_drill": 0.09999999999999999,
         "min_silk_clearance": 0.0,
-        "min_through_hole_diameter": 0.3,
+        "min_through_hole_diameter": 0.25,
         "min_track_width": 0.19999999999999998,
         "min_via_annular_width": 0.049999999999999996,
         "min_via_diameter": 0.39999999999999997,
@@ -129,6 +129,10 @@
         {
           "diameter": 0.0,
           "drill": 0.0
+        },
+        {
+          "diameter": 0.5,
+          "drill": 0.3
         },
         {
           "diameter": 0.6,
@@ -437,12 +441,100 @@
       ""
     ],
     [
-      "c4aba4db-1142-4267-8831-4a69eb7ce431",
+      "482002e9-b61c-4451-8d4f-4272dfaa5c4b",
       "LED Driver"
     ],
     [
-      "36dd7e98-2bf1-4d3f-a3f4-692acc5204a2",
-      "Screen2"
+      "f1e6ea49-3e6c-4f52-bc42-f54877de88d6",
+      "Screen"
+    ],
+    [
+      "9ed6dee6-f782-4bfc-b445-1f1fa35d508a",
+      "region1"
+    ],
+    [
+      "482002e9-b61c-4451-8d4f-4272dfaa5c4b",
+      "LED Driver"
+    ],
+    [
+      "f1e6ea49-3e6c-4f52-bc42-f54877de88d6",
+      "Screen"
+    ],
+    [
+      "e2762632-3d10-42bc-af71-2790d4ad7b01",
+      "region2"
+    ],
+    [
+      "482002e9-b61c-4451-8d4f-4272dfaa5c4b",
+      "LED Driver"
+    ],
+    [
+      "f1e6ea49-3e6c-4f52-bc42-f54877de88d6",
+      "Screen"
+    ],
+    [
+      "e27dc0a2-066b-4ef7-b05c-5490745a09fb",
+      "region3"
+    ],
+    [
+      "482002e9-b61c-4451-8d4f-4272dfaa5c4b",
+      "LED Driver"
+    ],
+    [
+      "f1e6ea49-3e6c-4f52-bc42-f54877de88d6",
+      "Screen"
+    ],
+    [
+      "c18314b1-b371-4c35-9900-c260f397193f",
+      "region4"
+    ],
+    [
+      "482002e9-b61c-4451-8d4f-4272dfaa5c4b",
+      "LED Driver"
+    ],
+    [
+      "f1e6ea49-3e6c-4f52-bc42-f54877de88d6",
+      "Screen"
+    ],
+    [
+      "4535f786-dd52-4d4a-8842-50733fe67cd5",
+      "region5"
+    ],
+    [
+      "482002e9-b61c-4451-8d4f-4272dfaa5c4b",
+      "LED Driver"
+    ],
+    [
+      "f1e6ea49-3e6c-4f52-bc42-f54877de88d6",
+      "Screen"
+    ],
+    [
+      "91463b1c-be8d-47ce-9872-16d968354567",
+      "region6"
+    ],
+    [
+      "482002e9-b61c-4451-8d4f-4272dfaa5c4b",
+      "LED Driver"
+    ],
+    [
+      "f1e6ea49-3e6c-4f52-bc42-f54877de88d6",
+      "Screen"
+    ],
+    [
+      "b886bd7d-f280-4750-98a3-0033b0ffa682",
+      "region7"
+    ],
+    [
+      "482002e9-b61c-4451-8d4f-4272dfaa5c4b",
+      "LED Driver"
+    ],
+    [
+      "f1e6ea49-3e6c-4f52-bc42-f54877de88d6",
+      "Screen"
+    ],
+    [
+      "cf2c1b33-0fef-4932-8352-bb1e1f0b104f",
+      "region8"
     ]
   ],
   "text_variables": {}
