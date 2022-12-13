@@ -1,0 +1,11 @@
+(sym_lib_table
+  (lib (name "CoE_Capacitor")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-symbols/CoE_Capacitor.kicad_sym")(options "")(descr ""))
+  (lib (name "CoE_Connector")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-symbols/CoE_Connector.kicad_sym")(options "")(descr ""))
+  (lib (name "CoE_Diode")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-symbols/CoE_Diode.kicad_sym")(options "")(descr ""))
+  (lib (name "CoE_IntegratedCircuit")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-symbols/CoE_IntegratedCircuit.kicad_sym")(options "")(descr ""))
+  (lib (name "CoE_Resistor")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-symbols/CoE_Resistor.kicad_sym")(options "")(descr ""))
+  (lib (name "CoE_Inductor")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-symbols/CoE_Inductor.kicad_sym")(options "")(descr ""))
+  (lib (name "CoE_Clock")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-symbols/CoE_Clock.kicad_sym")(options "")(descr ""))
+  (lib (name "CoE_Electromechanic")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-symbols/CoE_Electromechanic.kicad_sym")(options "")(descr ""))
+  (lib (name "CoE_Sensor")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-symbols/CoE_Sensor.kicad_sym")(options "")(descr ""))
+)
