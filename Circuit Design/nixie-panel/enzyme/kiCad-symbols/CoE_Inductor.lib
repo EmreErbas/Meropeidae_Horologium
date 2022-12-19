@@ -1,0 +1,30 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# 22uH
+#
+DEF 22uH L 0 40 N N 1 F N
+F0 "L" 50 50 50 H V L CNN
+F1 "22uH" 50 -50 39 H V L CNN
+F2 "Inductor_SMD:L_Taiyo-Yuden_NR-60xx" 0 450 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+F4 "3.5A" -25 0 28 V V C CNN "Saturation Current"
+F5 "SMMS0630-220M" 0 -425 50 H I C CNN "MFR Part #"
+F6 "C128694" 0 -525 50 H I C CNN "JLCPCB Part #"
+$FPLIST
+ Choke_*
+ *Coil*
+ Inductor_*
+ L_*
+$ENDFPLIST
+DRAW
+A 0 -75 25 -899 899 0 1 0 N 0 -100 0 -50
+A 0 -25 25 -899 899 0 1 0 N 0 -50 0 0
+A 0 25 25 -899 899 0 1 0 N 0 0 0 50
+A 0 75 25 -899 899 0 1 0 N 0 50 0 100
+X 1 1 0 150 50 D 50 50 1 1 P
+X 2 2 0 -150 50 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CSTNE8M00
+D 8 MHz Ceramic Resonator Built in Capacitor 33 pF ±0.2% 40 Ohms -40°C ~ 85°C Surface Mount
+K resonator crystal clock 800 user
+F www.murata.com/en/products/productdata/8801161740318/SPEC-CSTNE8M00G550000R0.pdf
+$ENDCMP
+#
+#End Doc Library

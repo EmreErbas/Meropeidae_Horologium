@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 22uH
+D 22uH ±20% SMD,7.3x6.6x3mm Power Inductors ROHS
+K inductor choke coil reactor magnetic USER
+F https://datasheet.lcsc.com/lcsc/2108131530_SXN-Shun-Xiang-Nuo-Elec-SMMS0630-220M_C128694.pdf
+$ENDCMP
+#
+#End Doc Library

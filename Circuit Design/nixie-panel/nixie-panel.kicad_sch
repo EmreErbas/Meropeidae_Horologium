@@ -3301,12 +3301,6 @@
     (path "/9ed6dee6-f782-4bfc-b445-1f1fa35d508a/482002e9-b61c-4451-8d4f-4272dfaa5c4b/1b0562b2-58ac-41ab-b471-31554e28edcf"
       (reference "R22") (unit 1) (value "1R") (footprint "CoF_Resistor:R-0402")
     )
-    (path "/9ed6dee6-f782-4bfc-b445-1f1fa35d508a/482002e9-b61c-4451-8d4f-4272dfaa5c4b/17fccf2b-cf9c-4970-8579-eb5a1c5e5315"
-      (reference "R23") (unit 1) (value "1R") (footprint "CoF_Resistor:R-0402")
-    )
-    (path "/9ed6dee6-f782-4bfc-b445-1f1fa35d508a/482002e9-b61c-4451-8d4f-4272dfaa5c4b/167a66ff-bb84-49db-b66f-2fa8d776a340"
-      (reference "R24") (unit 1) (value "1R") (footprint "CoF_Resistor:R-0402")
-    )
     (path "/9ed6dee6-f782-4bfc-b445-1f1fa35d508a/482002e9-b61c-4451-8d4f-4272dfaa5c4b/a31ac74b-6d1e-4779-9384-78f5c6d19376"
       (reference "R25") (unit 1) (value "0R") (footprint "CoF_Resistor:R-0402")
     )
@@ -3330,12 +3324,6 @@
     )
     (path "/e2762632-3d10-42bc-af71-2790d4ad7b01/482002e9-b61c-4451-8d4f-4272dfaa5c4b/1b0562b2-58ac-41ab-b471-31554e28edcf"
       (reference "R32") (unit 1) (value "1R") (footprint "CoF_Resistor:R-0402")
-    )
-    (path "/e2762632-3d10-42bc-af71-2790d4ad7b01/482002e9-b61c-4451-8d4f-4272dfaa5c4b/17fccf2b-cf9c-4970-8579-eb5a1c5e5315"
-      (reference "R33") (unit 1) (value "1R") (footprint "CoF_Resistor:R-0402")
-    )
-    (path "/e2762632-3d10-42bc-af71-2790d4ad7b01/482002e9-b61c-4451-8d4f-4272dfaa5c4b/167a66ff-bb84-49db-b66f-2fa8d776a340"
-      (reference "R34") (unit 1) (value "1R") (footprint "CoF_Resistor:R-0402")
     )
     (path "/e2762632-3d10-42bc-af71-2790d4ad7b01/482002e9-b61c-4451-8d4f-4272dfaa5c4b/a31ac74b-6d1e-4779-9384-78f5c6d19376"
       (reference "R35") (unit 1) (value "0R") (footprint "CoF_Resistor:R-0402")
@@ -3361,12 +3349,6 @@
     (path "/e27dc0a2-066b-4ef7-b05c-5490745a09fb/482002e9-b61c-4451-8d4f-4272dfaa5c4b/1b0562b2-58ac-41ab-b471-31554e28edcf"
       (reference "R42") (unit 1) (value "1R") (footprint "CoF_Resistor:R-0402")
     )
-    (path "/e27dc0a2-066b-4ef7-b05c-5490745a09fb/482002e9-b61c-4451-8d4f-4272dfaa5c4b/17fccf2b-cf9c-4970-8579-eb5a1c5e5315"
-      (reference "R43") (unit 1) (value "1R") (footprint "CoF_Resistor:R-0402")
-    )
-    (path "/e27dc0a2-066b-4ef7-b05c-5490745a09fb/482002e9-b61c-4451-8d4f-4272dfaa5c4b/167a66ff-bb84-49db-b66f-2fa8d776a340"
-      (reference "R44") (unit 1) (value "1R") (footprint "CoF_Resistor:R-0402")
-    )
     (path "/e27dc0a2-066b-4ef7-b05c-5490745a09fb/482002e9-b61c-4451-8d4f-4272dfaa5c4b/a31ac74b-6d1e-4779-9384-78f5c6d19376"
       (reference "R45") (unit 1) (value "0R") (footprint "CoF_Resistor:R-0402")
     )
@@ -3390,12 +3372,6 @@
     )
     (path "/c18314b1-b371-4c35-9900-c260f397193f/482002e9-b61c-4451-8d4f-4272dfaa5c4b/1b0562b2-58ac-41ab-b471-31554e28edcf"
       (reference "R52") (unit 1) (value "1R") (footprint "CoF_Resistor:R-0402")
-    )
-    (path "/c18314b1-b371-4c35-9900-c260f397193f/482002e9-b61c-4451-8d4f-4272dfaa5c4b/17fccf2b-cf9c-4970-8579-eb5a1c5e5315"
-      (reference "R53") (unit 1) (value "1R") (footprint "CoF_Resistor:R-0402")
-    )
-    (path "/c18314b1-b371-4c35-9900-c260f397193f/482002e9-b61c-4451-8d4f-4272dfaa5c4b/167a66ff-bb84-49db-b66f-2fa8d776a340"
-      (reference "R54") (unit 1) (value "1R") (footprint "CoF_Resistor:R-0402")
     )
     (path "/c18314b1-b371-4c35-9900-c260f397193f/482002e9-b61c-4451-8d4f-4272dfaa5c4b/a31ac74b-6d1e-4779-9384-78f5c6d19376"
       (reference "R55") (unit 1) (value "0R") (footprint "CoF_Resistor:R-0402")
