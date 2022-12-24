@@ -8,4 +8,5 @@
   (lib (name "CoF_SmallOutline")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-footprints/CoF_SmallOutline.pretty")(options "")(descr ""))
   (lib (name "CoF_Electromechanic")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-footprints/CoF_Electromechanic.pretty")(options "")(descr ""))
   (lib (name "CoF_Crystal")(type "KiCad")(uri "${KIPRJMOD}/enzyme/kiCad-footprints/CoF_Crystal.pretty")(options "")(descr ""))
+  (lib (name "nixie-panel")(type "KiCad")(uri "/Users/emreerbas/Desktop/Emre/Projects/Nixie/Circuit Design/nixie-panel")(options "")(descr ""))
 )
