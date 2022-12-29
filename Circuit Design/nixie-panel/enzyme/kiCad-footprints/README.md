@@ -1,3 +1,0 @@
-# kiCad-footprints
-
-
