@@ -1,3 +1,12 @@
 [submodule "Circuit Design/enzyme"]
 	path = Circuit Design/enzyme
 	url = git@github.com:Merophy/enzyme.git
+[submodule "enzyme"]
+	path = enzyme
+	url = git@github.com:Merophy/enzyme.git
+[submodule "Circuit Design/nixie-panel/enzyme"]
+	path = Circuit Design/nixie-panel/enzyme
+	url = git@github.com:Merophy/enzyme.git
+[submodule "Circuit Design/nixie-CU/enzyme"]
+	path = Circuit Design/nixie-CU/enzyme
+	url = git@github.com:Merophy/enzyme.git
