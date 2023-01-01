@@ -358,7 +358,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "nixie.kicad_pro",
+    "filename": "nixie-CU.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -439,54 +439,6 @@
     [
       "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55",
       ""
-    ],
-    [
-      "482002e9-b61c-4451-8d4f-4272dfaa5c4b",
-      "LED Driver"
-    ],
-    [
-      "b86846e2-9916-49bc-b160-db20a42974d3",
-      "Screen1"
-    ],
-    [
-      "9ed6dee6-f782-4bfc-b445-1f1fa35d508a",
-      "region1"
-    ],
-    [
-      "482002e9-b61c-4451-8d4f-4272dfaa5c4b",
-      "LED Driver"
-    ],
-    [
-      "b86846e2-9916-49bc-b160-db20a42974d3",
-      "Screen1"
-    ],
-    [
-      "e2762632-3d10-42bc-af71-2790d4ad7b01",
-      "region2"
-    ],
-    [
-      "482002e9-b61c-4451-8d4f-4272dfaa5c4b",
-      "LED Driver"
-    ],
-    [
-      "b86846e2-9916-49bc-b160-db20a42974d3",
-      "Screen1"
-    ],
-    [
-      "e27dc0a2-066b-4ef7-b05c-5490745a09fb",
-      "region3"
-    ],
-    [
-      "482002e9-b61c-4451-8d4f-4272dfaa5c4b",
-      "LED Driver"
-    ],
-    [
-      "b86846e2-9916-49bc-b160-db20a42974d3",
-      "Screen1"
-    ],
-    [
-      "c18314b1-b371-4c35-9900-c260f397193f",
-      "region4"
     ]
   ],
   "text_variables": {}
