@@ -28,7 +28,7 @@ The circuit that the Nixie-Panel project uses is:
 <img src="https://github.com/EmreErbas/Nixie/blob/main/Documents/Notes/Pictures/IS31FL3731_Circuit.png" width="1000" />
 
 under this hierarchical page:
-<img src="https://github.com/EmreErbas/Nixie/blob/main/Documents/Notes/Pictures/IS31FL3731_Block.png" width="1000" />
+<img src="https://github.com/EmreErbas/Nixie/blob/main/Documents/Notes/Pictures/IS31FL3731_Sheet.png" width="1000" />
 
 ## Driving the IC
 Adafruit has a library for this IC. [Here](https://learn.adafruit.com/i31fl3731-16x9-charliplexed-pwm-led-driver/overview) is the link.
