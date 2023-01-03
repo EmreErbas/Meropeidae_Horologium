@@ -1,16 +1,94 @@
-# Nixie Docs
-## About Nixie Docs
-(Write an introduction about the general documentation structure)
-## How to Find your way in these folders 
-(Explain the subfolders briefly)
-### Datasheets
-<sub> Click [here](https://github.com/EmreErbas/Nixie/tree/main/Documents/Datasheets) to jump to the folder </sub>
-(-)
-### Notes
-<sub> Click [here](https://github.com/EmreErbas/Nixie/tree/main/Documents/Notes) to jump to the folder </sub>
-(-)
-### Logs
-<sub> Click [here](https://github.com/EmreErbas/Nixie/tree/main/Documents/Logs) to jump to the folder </sub>
-(-)
+# How to Program ESP32-S3
+## ESP32-S3 
+<dl>
+<dt>2.4 GHz WiFi + Bluetooth-LE SoC</dt>
+<dt>Supporting IEEE 802.11b/g/n (2.4 GHz WiFi) and Bluetooth ® 5 (LE)</dt>
+</dl>
 
+[ESP32-S3](https://cdn-shop.adafruit.com/product-files/5477/esp32-s3_datasheet_en.pdf) is a low-power MCU-based system-on-chip (SoC) that supports 2.4 GHz Wi-Fi and Bluetooth® Low Energy (Bluetooth LE). It consists of high-performance dual-core microprocessor (Xtensa® 32-bit LX7), a lowpower coprocessor, a Wi-Fi baseband, a Bluetooth LE baseband, RF module, and peripherals.
+
+### FEATURES
+#### WiFi
+* IEEE 802.11 b/g/n-compliant
+* Supports 20 MHz, 40 MHz bandwidth in 2.4 GHz band
+* 1T1R mode with data rate up to 150 Mbps
+* Wi-Fi Multimedia (WMM)
+* TX/RX A-MPDU, TX/RX A-MSDU
+* Immediate Block ACK
+* Fragmentation and defragmentation
+* Automatic Beacon monitoring (hardware TSF)
+* 4 × virtual Wi-Fi interfaces
+* Simultaneous support for Infrastructure BSS in Station, SoftAP, or Station + SoftAP modes Note that when ESP32-S3 scans in Station mode, the SoftAP channel will change along with the Station channel
+* Antenna diversity
+* 802.11mc FTM
+* External PA is supported 
+#### Bluetooth
+* Bluetooth LE: Bluetooth 5, Bluetooth mesh
+* High power mode (20 dBm, share the same PA with Wi-Fi)
+* Speed: 125 Kbps, 500 Kbps, 1 Mbps, 2 Mbps
+* Advertising extensions
+* Multiple advertisement sets
+* Channel selection algorithm #2
+* Internal co-existence mechanism between Wi-Fi and Bluetooth to share the same antenna 
+#### CPU and Memory
+* Xtensa® dual-core 32-bit LX7 microprocessor, up to 240 MHz
+* CoreMark® 
+    score:
+    - 1 core at 240 MHz: 613.86 CoreMark; 2.56 CoreMark/MHz    
+    - 2 cores at 240 MHz: 1181.60 CoreMark; 4.92 CoreMark/MHz
+* 128-bit data bus and SIMD commands
+* 384 KB ROM
+* 512 KB SRAM
+* 16 KB SRAM in RTC
+* SPI, Dual SPI, Quad SPI, Octal SPI, QPI and OPI interfaces that allow connection to multiple flash and external RAM
+* Flash controller with cache is supported
+* Flash in-Circuit Programming (ICP) is supported
+#### Advanced Peripheral Interfaces
+* 45 × programmable GPIOs
+* Digital 
+    interfaces:
+    - 4 × SPI
+    - 1 × LCD interface (8-bit ~16-bit parallel RGB, I8080 and MOTO6800), 
+        - supporting conversion between RGB565, YUV422, YUV420 and YUV411
+    - 1 × DVP 8-bit ~16-bit camera interface
+    - 3 × UART
+    - 2 × I2C
+    - 2 × I2S
+    - 1 × RMT (TX/RX)
+    - 1 × pulse counter
+    - LED PWM controller, up to 8 channels
+    - 1 × full-speed USB OTG
+    - 1 × USB Serial/JTAG controller
+    - 2 × MCPWM
+    - 1 × SDIO host controller with 2 slots
+    - General DMA controller (GDMA), with 5 transmit channels and 5 receive channels
+    - 1 × TWAI® controller, compatible with ISO 11898-1 (CAN Specification 2.0)
+* Analog 
+    interfaces:
+    - 2 × 12-bit SAR ADCs, up to 20 channels
+    - 1 × temperature sensor
+    - 14 × touch sensing IOs
+* Timers
+    :
+    - 4 × 54-bit general-purpose timers
+    - 1 × 52-bit system timer
+    - 3 × watchdog timers
+Low Power Management
+* Power Management Unit with five power modes
+* Ultra-Low-Power (ULP) 
+    coprocessors:
+    - ULP-RISC-V coprocessor
+    - ULP-FSM coprocessor
+Security
+* Secure boot
+* Flash encryption
+* 4-Kbit OTP, up to 1792 bits for users
+* Cryptographic hardware 
+    acceleration:
+    - AES-128/256 (FIPS PUB 197)
+    - Hash (FIPS PUB 180-4)
+    - RSA
+    - Random Number Generator (RNG)
+    - HMAC
+    - Digital signature
 
