@@ -112,5 +112,6 @@ Security
 * Low Power friendly! In deep sleep mode we can get down to ~100uA of current draw from the Lipoly connection. Quiescent current is from the power regulator, ESP32-S3 chip, and Lipoly monitor. Turn off the NeoPixel and external I2C power for the lowest quiescent current draw.
 
 <img src="https://github.com/EmreErbas/Nixie/blob/main/Documents/Notes/Pictures/ESP32-S3-Feather-Pinout.png" width="1000" />
+
 ##### Arduino IDE
-check the [guide](https://learn.adafruit.com/adafruit-esp32-s3-feather/arduino-ide-setup)
+Check the [Guide](https://learn.adafruit.com/adafruit-esp32-s3-feather/arduino-ide-setup)
