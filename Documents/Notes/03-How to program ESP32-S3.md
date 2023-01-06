@@ -113,5 +113,11 @@ Security
 
 <img src="https://github.com/EmreErbas/Nixie/blob/main/Documents/Notes/Pictures/ESP32-S3-Feather-Pinout.png" width="1000" />
 
-##### Arduino IDE
+### How to install the libraries
+Check the [Guide](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#windows-manual-installation)
+
+**[The repository of the library](https://github.com/espressif/arduino-esp32)**
+
+### Arduino IDE
 Check the [Guide](https://learn.adafruit.com/adafruit-esp32-s3-feather/arduino-ide-setup)
+
