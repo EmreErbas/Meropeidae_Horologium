@@ -5,7 +5,7 @@
 <dt>Supporting IEEE 802.11b/g/n (2.4 GHz WiFi) and Bluetooth ® 5 (LE)</dt>
 </dl>
 
-<img src="https://github.com/EmreErbas/Nixie/blob/main/Documents/Notes/Pictures/ESP32-S3-MINI.png" width="1000" />
+<img src="https://github.com/EmreErbas/Nixie/blob/main/Documents/Notes/Pictures/ESP32-S3-MINI.png" width="600" />
 
 [ESP32-S3](https://cdn-shop.adafruit.com/product-files/5477/esp32-s3_datasheet_en.pdf) is a low-power MCU-based system-on-chip (SoC) that supports 2.4 GHz Wi-Fi and Bluetooth® Low Energy (Bluetooth LE). It consists of high-performance dual-core microprocessor (Xtensa® 32-bit LX7), a lowpower coprocessor, a Wi-Fi baseband, a Bluetooth LE baseband, RF module, and peripherals.
 
@@ -115,7 +115,7 @@ Security
 
 ### How to install the libraries
 
-Check the [Guide].(https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#windows-manual-installation)
+Check the [Guide](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#macos).
 
 For macOS, you must istall `git` and `git-gui`.
 Detailed guide is [here](https://git-scm.com/download/mac).
@@ -147,7 +147,10 @@ Download (get) ESP32 Board files, tools etc.
 `$ cd esp32/tools`  
 `$ python3 get.py` (`python` or `python3` depends on your machine)
 
-<img src="https://github.com/EmreErbas/Nixie/blob/main/Documents/Notes/Pictures/get_py_terminal.png" width="1000" />
+<img src="https://github.com/EmreErbas/Nixie/blob/main/Documents/Notes/Pictures/get_py_terminal.png" width="500" />
+
+That is it!  
+<img src="https://github.com/EmreErbas/Nixie/blob/main/Documents/Notes/Pictures/arduino_board_select.png" width="500" />
 
 ### Arduino IDE
 Check the [Guide](https://learn.adafruit.com/adafruit-esp32-s3-feather/arduino-ide-setup)
