@@ -116,7 +116,26 @@ Security
 ### How to install the libraries
 Check the [Guide](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#windows-manual-installation)
 
-**[The repository of the library](https://github.com/espressif/arduino-esp32)**
+For macOS, you must istall `git` and `git-gui`. 
+the detailed guide is [here](https://git-scm.com/download/mac)
+
+`$ brew install git`
+
+if python 3.9 is missing, then
+`$ xcode-select --install`
+
+`$ brew install git-gui`
+
+Then, you can run the gui `git-gui`
+
+Choose **Clone Existing Repository**
+
+The source location is `https://github.com/espressif/arduino-esp32.git`
+
+The target directory is `[ARDUINO_SKETCHBOOK_DIR]/hardware/espressif/esp32`, usually `/Users/[user_name]/Documents/Arduino/hardware/espressif/esp32`
+
+
+**[The repository of the library](https://github.com/espressif/arduino-esp32.git)**
 
 ### Arduino IDE
 Check the [Guide](https://learn.adafruit.com/adafruit-esp32-s3-feather/arduino-ide-setup)
