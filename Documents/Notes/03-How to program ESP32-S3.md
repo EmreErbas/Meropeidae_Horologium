@@ -114,26 +114,32 @@ Security
 <img src="https://github.com/EmreErbas/Nixie/blob/main/Documents/Notes/Pictures/ESP32-S3-Feather-Pinout.png" width="1000" />
 
 ### How to install the libraries
-Check the [Guide](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#windows-manual-installation)
 
-For macOS, you must istall `git` and `git-gui`. 
-the detailed guide is [here](https://git-scm.com/download/mac)
+Check the [Guide].(https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#windows-manual-installation)
 
+For macOS, you must istall `git` and `git-gui`.
+Detailed guide is [here](https://git-scm.com/download/mac).
+
+Obviously, we need to have git installed on our PC, always.  
 `$ brew install git`
 
-if python 3.9 is missing, then
-`$ xcode-select --install`
+The official guide recommends git-gui for installation. To follow the official guide, you need to solve several issues. I do not prefer to use the gui tool which is quite buggy on macOS. But still, you can find the solutions below.
 
-`$ brew install git-gui`
+> `$ brew install git-gui`  
+> Then, you can run the gui `$ git-gui`
+> 
+> if python 3.9 is missing, then  
+> `$ xcode-select --install`
+> 
+> Choose **Clone Existing Repository**  
+> The source location is `https://github.com/espressif/arduino-esp32.git`  
+> The target directory is `[ARDUINO_SKETCHBOOK_DIR]/hardware/espressif/esp32`, usually `/Users/[user_name]/Documents/Arduino/hardware/espressif/esp32`
+> 
+> **Important note:** git-gui malfunction: can not create a directory or clone one  
+> to solve it, use `$ git config --global init.defaultBranch main`
 
-Then, you can run the gui `git-gui`
-
-Choose **Clone Existing Repository**
-
-The source location is `https://github.com/espressif/arduino-esp32.git`
-
-The target directory is `[ARDUINO_SKETCHBOOK_DIR]/hardware/espressif/esp32`, usually `/Users/[user_name]/Documents/Arduino/hardware/espressif/esp32`
-
+Or, just run this command on terminal:  
+`git clone --recurse-submodules https://github.com/espressif/arduino-esp32.git`
 
 **[The repository of the library](https://github.com/espressif/arduino-esp32.git)**
 
