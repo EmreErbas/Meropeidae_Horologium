@@ -120,6 +120,8 @@ Check the [Guide].(https://docs.espressif.com/projects/arduino-esp32/en/latest/i
 For macOS, you must istall `git` and `git-gui`.
 Detailed guide is [here](https://git-scm.com/download/mac).
 
+**[The repository of the library](https://github.com/espressif/arduino-esp32.git)**
+
 Obviously, we need to have git installed on our PC, always.  
 `$ brew install git`
 
@@ -139,9 +141,13 @@ The official guide recommends git-gui for installation. To follow the official g
 > to solve it, use `$ git config --global init.defaultBranch main`
 
 Or, just run this command on terminal:  
-`git clone --recurse-submodules https://github.com/espressif/arduino-esp32.git`
+`$ git clone --recurse-submodules https://github.com/espressif/arduino-esp32.git`
 
-**[The repository of the library](https://github.com/espressif/arduino-esp32.git)**
+Download (get) ESP32 Board files, tools etc.  
+`$ cd esp32/tools`  
+`$ python3 get.py` (`python` or `python3` depends on your machine)
+
+<img src="https://github.com/EmreErbas/Nixie/blob/main/Documents/Notes/Pictures/get_py_terminal.png" width="1000" />
 
 ### Arduino IDE
 Check the [Guide](https://learn.adafruit.com/adafruit-esp32-s3-feather/arduino-ide-setup)
