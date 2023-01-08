@@ -32,3 +32,12 @@ under this hierarchical page:
 
 ## Driving the IC
 Adafruit has a library for this IC. [Here](https://learn.adafruit.com/i31fl3731-16x9-charliplexed-pwm-led-driver/overview) is the link.
+
+Open up the Arduino library manager:  
+Search for the `Adafruit IS31FL3731` library and install it  
+Search for the `Adafruit GFX` library and install it  
+
+<img src="https://github.com/EmreErbas/Nixie/blob/main/Documents/Notes/Pictures/IS31FL3731-on-ESP32-S3.png" width="600" />
+
+
+
