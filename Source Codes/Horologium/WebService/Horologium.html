@@ -1,7 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+          body {
+            padding: 25px;
+            background-color: white;
+            color: black;
+            font-size: 25px;
+          }
+          .dark-mode {
+            background-color: black;
+            color: white;
+          }
+          .light-mode {
+            background-color: white;
+            color: black;
+          }
+        </style>
             <link rel="icon" href="data:,">
                 <style>html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center;}
                     .button { background-color: #4CAF50; border: none; color: white; padding: 16px 40px;
@@ -17,7 +37,34 @@
                 </p>
             </head>
     <body>
-        <h1>My First Heading</h1>
-        <p>My first paragraph.</p>
+        <h1>GeeksForGeeks</h1>
+      
+        <p>
+          This is a sample GeeksForGeeks Text.
+          Dark Mode Websites using Html CSS &
+          Javascript
+        </p>
+      
+        <img src=
+    "https://media.geeksforgeeks.org/wp-content/uploads/20200122115631/GeeksforGeeks210.png"/>
+      
+        <h3 id="DarkModetext">Dark Mode is OFF</h3>
+        <button onclick="darkMode()">Darkmode</button>
+        <button onclick="lightMode()">LightMode</button>
+        <script>
+          function darkMode() {
+            var element = document.body;
+            var content = document.getElementById("DarkModetext");
+            element.className = "dark-mode";
+            content.innerText = "Dark Mode is ON";
+          }
+          function lightMode() {
+            var element = document.body;
+            var content = document.getElementById("DarkModetext");
+            element.className = "light-mode";
+            content.innerText = "Dark Mode is OFF";
+          }
+        </script>
     </body>
 </html>
+
