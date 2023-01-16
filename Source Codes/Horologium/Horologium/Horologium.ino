@@ -4,6 +4,8 @@
 
 // If you're using the full breakout...
 Adafruit_IS31FL3731 ledmatrix = Adafruit_IS31FL3731();
+Adafruit_IS31FL3731 ledmatrix2 = Adafruit_IS31FL3731();
+
 // If you're using the FeatherWing version
 //Adafruit_IS31FL3731_Wing ledmatrix = Adafruit_IS31FL3731_Wing();
 
@@ -15,7 +17,7 @@ void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
 
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println("ISSI swirl test");
 
 // call begin(address) to initialize the driver. 
@@ -30,6 +32,7 @@ void setup() {
     delay(60);                      // wait for a second
   }
   Serial.println("IS31 found!");
+  ledmatrix2.begin(0x77);
 }
 /* Drawing
 You can then draw to the display. Note that since we write directly 
@@ -41,14 +44,18 @@ is the PWM of the LED, 0 is off, and 255 is all the way on.
 
 This loop will light up every LED in increasing brightness: */
 void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
-  delay(200);                      // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
   // animate over all the pixels, and set the brightness from the sweep table
   for (uint8_t incr = 0; incr < 24; incr++)
+  {
     for (uint8_t x = 0; x < 16; x++)
+    {
       for (uint8_t y = 0; y < 9; y++)
+      {
         ledmatrix.drawPixel(x, y, sweep[(x+y+incr)%24]);
-  delay(200);
-   Serial.println("IS31 not found");
+        ledmatrix2.drawPixel(x, y, sweep[(x+y+incr)%24]);     
+      }
+    }
+    delay(10);
+  }
+
 }
