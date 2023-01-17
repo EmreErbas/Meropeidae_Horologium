@@ -56,12 +56,10 @@ void loop() {
     {
       for (uint8_t y = 0; y < 9; y++)
       {
-        ledmatrix.drawPixel(x, y, sweep[(x+y+incr + 2)%48]);
-        ledmatrix2.drawPixel(x, y, sweep[(x+y+incr)%48]);     
+        ledmatrix.setLEDPWM(x + (y << 4), sweep[(x+y+incr + 2)%48]);
+        ledmatrix2.setLEDPWM(x + (y << 4), sweep[(x+y+incr)%48]);    
       }
     }
-    delay(5);
-
   }
   
 }
