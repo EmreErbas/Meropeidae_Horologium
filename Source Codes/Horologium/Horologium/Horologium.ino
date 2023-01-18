@@ -5,6 +5,8 @@
 // If you're using the full breakout...
 Adafruit_IS31FL3731 ledmatrix = Adafruit_IS31FL3731();
 Adafruit_IS31FL3731 ledmatrix2 = Adafruit_IS31FL3731();
+Adafruit_IS31FL3731 ledmatrix3 = Adafruit_IS31FL3731();
+Adafruit_IS31FL3731 ledmatrix4 = Adafruit_IS31FL3731();
 
 // If you're using the FeatherWing version
 //Adafruit_IS31FL3731_Wing ledmatrix = Adafruit_IS31FL3731_Wing();
@@ -34,7 +36,9 @@ void setup() {
     delay(60);                      // wait for a second
   }
   Serial.println("IS31 found!");
-  ledmatrix2.begin(0x77);
+  ledmatrix2.begin(0x75);
+  ledmatrix3.begin(0x76);  
+  ledmatrix4.begin(0x77);
 }
 /* Drawing
 You can then draw to the display. Note that since we write directly 
@@ -56,8 +60,10 @@ void loop() {
     {
       for (uint8_t y = 0; y < 9; y++)
       {
-        ledmatrix.setLEDPWM(x + (y << 4), sweep[(x+y+incr + 2)%48]);
-        ledmatrix2.setLEDPWM(x + (y << 4), sweep[(x+y+incr)%48]);    
+        ledmatrix.setLEDPWM (x + (y << 4), sweep[(x + y + incr + 2) % 48]);
+        ledmatrix2.setLEDPWM(x + (y << 4), sweep[(x + y + incr) % 48]);    
+        ledmatrix3.setLEDPWM(x + (y << 4), sweep[(x + y + incr) % 48]); 
+        ledmatrix4.setLEDPWM(x + (y << 4), sweep[(x + y + incr) % 48]); 
       }
     }
   }
