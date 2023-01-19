@@ -8,9 +8,8 @@ Adafruit_IS31FL3731 ledmatrix2 = Adafruit_IS31FL3731();
 Adafruit_IS31FL3731 ledmatrix3 = Adafruit_IS31FL3731();
 Adafruit_IS31FL3731 ledmatrix4 = Adafruit_IS31FL3731();
 
-// If you're using the FeatherWing version
-//Adafruit_IS31FL3731_Wing ledmatrix = Adafruit_IS31FL3731_Wing();
-
+TwoWire DefaultLine = TwoWire();
+TwoWire AlteredLine = TwoWire();
 
 // The lookup table to make the brightness changes be more visible
 uint8_t sweep[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 29, 32, 35, 38, 41, 44,
@@ -22,6 +21,12 @@ void setup() {
 
   Serial.begin(115200);
   Serial.println("ISSI swirl test");
+
+// https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf#page=48
+// https://github.com/EmreErbas/Meropeidae_Horologium/blob/main/Documents/Notes/03-How%20to%20program%20ESP32-S3.md
+  DefaultLine.setPins(3, 4);
+  AlteredLine.setPins(3, 5);
+  
 
 
 // call begin(address) to initialize the driver. 
@@ -53,7 +58,8 @@ This loop will light up every LED in increasing brightness: */
 void loop() {
   // animate over all the pixels, and set the brightness from the sweep table
 
-  
+  // activate the default clock line to reach the upper drivers
+
   for (uint8_t incr = 0; incr < 48; incr+=2)
   {
     for (uint8_t x = 0; x < 16; x++)
