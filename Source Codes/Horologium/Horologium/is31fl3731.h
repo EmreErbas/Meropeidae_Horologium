@@ -1,9 +1,8 @@
 #ifndef _IS31FL3731_H_
 #define _IS31FL3731_H_
 
-#include <Adafruit_GFX.h>
-#include <Adafruit_I2CDevice.h>
 #include <Arduino.h>
+#include <Adafruit_I2CDevice.h>
 
 #define ISSI_ADDR_DEFAULT 0x74
 
@@ -29,7 +28,7 @@
     @brief Constructor for IS31FL3731
 */
 /**************************************************************************/
-class is31fl3731 : public Adafruit_GFX 
+class is31fl3731
 {
 public:
   is31fl3731(void);

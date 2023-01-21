@@ -16,7 +16,7 @@
 /**************************************************************************/
 
 is31fl3731::is31fl3731(void)
-    : Adafruit_GFX(16, 9) {}
+{}
 
 /**************************************************************************/
 /*!
@@ -137,7 +137,8 @@ void is31fl3731::setLEDPWM(uint8_t lednum, uint8_t pwm, uint8_t bank) {
 /**************************************************************************/
 void is31fl3731::drawPixel(int16_t x, int16_t y, uint16_t color) {
   // check rotation, move pixel around if necessary
-  switch (getRotation()) {
+  // switch (getRotation()) {
+  switch (1) {
   case 1:
     _swap_int16_t(x, y);
     x = 16 - x - 1;

@@ -1,5 +1,4 @@
 #include "HAL_nixiePanel.h"
-#include "is31fl3731.h"
 
 /**************************************************************************/
 /*!
@@ -7,12 +6,7 @@
 */
 /**************************************************************************/
 nixiePanel::nixiePanel(void)
-{
-// https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf#page=48
-// https://github.com/EmreErbas/Meropeidae_Horologium/blob/main/Documents/Notes/03-How%20to%20program%20ESP32-S3.md
-  DefaultLine.setPins(3, 4);
-  AlteredLine.setPins(3, 5);
-}
+{}
 
 /**************************************************************************/
 /*!
@@ -21,19 +15,24 @@ nixiePanel::nixiePanel(void)
 /**************************************************************************/
 bool nixiePanel::begin(void) 
 {
-  ledmatrix1.begin(0x74, &DefaultLine);
-  ledmatrix2.begin(0x77, &DefaultLine);
-  ledmatrix1.hardClear();
-  ledmatrix2.hardClear();
-  ledmatrix1.end();
-  ledmatrix2.end(); 
+  // https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf#page=48
+  // https://github.com/EmreErbas/Meropeidae_Horologium/blob/main/Documents/Notes/03-How%20to%20program%20ESP32-S3.md
+  DefaultLine.setPins(3, 4);
+  AlteredLine.setPins(3, 5);
 
-  ledmatrix3.begin(0x74, &AlteredLine);  
-  ledmatrix4.begin(0x77, &AlteredLine);
-  ledmatrix3.hardClear();
-  ledmatrix4.hardClear();
-  ledmatrix3.end();
-  ledmatrix4.end(); 
+  driverLeftTop.begin(0x77, &DefaultLine);
+  driverRightTop.begin(0x74, &DefaultLine);
+  driverLeftTop.hardClear();
+  driverRightTop.hardClear();
+  driverLeftTop.end();
+  driverRightTop.end(); 
+
+  driverLeftBottom.begin(0x77, &AlteredLine);  
+  driverRightBottom.begin(0x74, &AlteredLine);
+  driverLeftBottom.hardClear();
+  driverRightBottom.hardClear();
+  driverLeftBottom.end();
+  driverRightBottom.end(); 
   return true;
 }
 
@@ -47,15 +46,15 @@ void nixiePanel::demoShow(void)
     47, 44, 41, 38, 35, 32, 29, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 7, 6, 5, 4, 3, 2, 1
   };
 
-  ledmatrix1.begin(0x74, &DefaultLine);
-  ledmatrix2.begin(0x77, &DefaultLine);
+  driverLeftTop.begin(0x77, &DefaultLine);
+  driverRightTop.begin(0x74, &DefaultLine);
   for (uint8_t incr = 0; incr < 48; incr+=2)
   {
     for (uint8_t x = 0; x < 16; x++)
     {
       for (uint8_t y = 0; y < 9; y++)
       {
-        ledmatrix1.setLEDPWM(x + (y << 4), sweep[(x + y + incr + 2) % 48]);
+        driverLeftTop.setLEDPWM(x + (y << 4), sweep[(x + y + incr + 2) % 48]);
       }
     }
   }
@@ -65,22 +64,22 @@ void nixiePanel::demoShow(void)
     {
       for (uint8_t y = 0; y < 9; y++)
       {
-        ledmatrix2.setLEDPWM(x + (y << 4), sweep[(x + y + incr) % 48]);    
+        driverRightTop.setLEDPWM(x + (y << 4), sweep[(x + y + incr) % 48]);    
       }
     }
   }
-  ledmatrix1.end();
-  ledmatrix2.end();
+  driverLeftTop.end();
+  driverRightTop.end();
 
-  ledmatrix3.begin(0x74, &AlteredLine);  
-  ledmatrix4.begin(0x77, &AlteredLine);
+  driverLeftBottom.begin(0x77, &AlteredLine);  
+  driverRightBottom.begin(0x74, &AlteredLine);
   for (uint8_t incr = 0; incr < 48; incr+=2)
   {
     for (uint8_t x = 0; x < 16; x++)
     {
       for (uint8_t y = 0; y < 9; y++)
       {  
-        ledmatrix3.setLEDPWM(x + (y << 4), sweep[(x + y + incr + 2) % 48]); 
+        driverLeftBottom.setLEDPWM(x + (y << 4), sweep[(x + y + incr + 2) % 48]); 
       }
     }
   }
@@ -90,10 +89,10 @@ void nixiePanel::demoShow(void)
     {
       for (uint8_t y = 0; y < 9; y++)
       {  
-        ledmatrix4.setLEDPWM(x + (y << 4), sweep[(x + y + incr) % 48]); 
+        driverRightBottom.setLEDPWM(x + (y << 4), sweep[(x + y + incr) % 48]); 
       }
     }
   }
-  ledmatrix3.end();
-  ledmatrix4.end();
+  driverLeftBottom.end();
+  driverRightBottom.end();
 }
