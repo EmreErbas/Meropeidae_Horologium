@@ -99,47 +99,33 @@ void nixiePanel::demoShow(void)
 
 void nixiePanel::demoFont(void) 
 {
-  myGFX.writeLine(0, 0, 3, 4, 50);
-
-  uint16_t pixelLookUpTable[16][9] = {
-  {0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,  0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000},
-  {0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,  0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000},
-  {0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,  0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000},
-  {0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,  0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000},
-  {0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,  0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000},
-  {0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,  0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000},
-  {0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,  0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000},
-  {0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,  0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000},
-  {0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,  0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000},
-  {0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,  0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000}
-  };
-
   driverLeftTop.begin(0x77, &DefaultLine);
   driverRightTop.begin(0x74, &DefaultLine);
-  for (uint8_t incr = 0; incr < 48; incr+=2)
+  for (uint8_t y = 0; y < 9; y++)
   {
     for (uint8_t x = 0; x < 16; x++)
     {
-      for (uint8_t y = 0; y < 9; y++)
+      if(x < 8)
       {
-        if(x < 8)
-        {
-          driverLeftTop.setLEDPWM(x + (y << 4), myGFX.ScreenBuffer[x][y]);
-        }
-        else
-        {
-          driverLeftTop.setLEDPWM(x + (y << 4), myGFX.ScreenBuffer[x][y]);
-        }
+        driverLeftTop.setLEDPWM(x + (y << 4), myGFX.ScreenBuffer[y + 8][7 - x]);
+      }
+      else
+      {
+        driverLeftTop.setLEDPWM(x + (y << 4), myGFX.ScreenBuffer[y][15 - x]);
       }
     }
   }
-  for (uint8_t incr = 0; incr < 48; incr+=2)
+  for (uint8_t y = 0; y < 9; y++)
   {
     for (uint8_t x = 0; x < 16; x++)
     {
-      for (uint8_t y = 0; y < 9; y++)
+      if(x < 8)
       {
-        driverRightTop.setLEDPWM(x + (y << 4), 1);    
+        driverRightTop.setLEDPWM(x + (y << 4), myGFX.ScreenBuffer[18 + (y + 8)][7 - x]);
+      }
+      else
+      {
+        driverRightTop.setLEDPWM(x + (y << 4), myGFX.ScreenBuffer[18 + y][15 - x]);
       }
     }
   }
@@ -148,23 +134,31 @@ void nixiePanel::demoFont(void)
 
   driverLeftBottom.begin(0x77, &AlteredLine);  
   driverRightBottom.begin(0x74, &AlteredLine);
-  for (uint8_t incr = 0; incr < 48; incr+=2)
+  for (uint8_t y = 0; y < 9; y++)
   {
     for (uint8_t x = 0; x < 16; x++)
     {
-      for (uint8_t y = 0; y < 9; y++)
-      {  
-        driverLeftBottom.setLEDPWM(x + (y << 4), 1); 
+      if(x < 8)
+      {
+        driverLeftBottom.setLEDPWM((15 - x) + ((8 - y) << 4), myGFX.ScreenBuffer[y + 8][8 + (7 - x)]);
+      }
+      else
+      {
+        driverLeftBottom.setLEDPWM((15 - x) + ((8 - y) << 4), myGFX.ScreenBuffer[y][8 + (15 - x)]);
       }
     }
   }
-  for (uint8_t incr = 0; incr < 48; incr+=2)
+  for (uint8_t y = 0; y < 9; y++)
   {
     for (uint8_t x = 0; x < 16; x++)
     {
-      for (uint8_t y = 0; y < 9; y++)
-      {  
-        driverRightBottom.setLEDPWM(x + (y << 4), 1); 
+      if(x < 8)
+      {
+        driverRightBottom.setLEDPWM((15 - x) + ((8 - y) << 4), myGFX.ScreenBuffer[18 + (y + 8)][8 + (7 - x)]);
+      }
+      else
+      {
+        driverRightBottom.setLEDPWM((15 - x) + ((8 - y) << 4), myGFX.ScreenBuffer[18 + y][8 + (15 - x)]);
       }
     }
   }

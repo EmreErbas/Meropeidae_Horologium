@@ -20,6 +20,7 @@ public:
   void demoShow(void);
   void demoFont(void);
 
+  Adafruit_GFX myGFX  = Adafruit_GFX();
 protected:
 
 private:
@@ -31,7 +32,6 @@ private:
   is31fl3731 driverLeftBottom   = is31fl3731();
   is31fl3731 driverRightBottom  = is31fl3731();
 
-  Adafruit_GFX myGFX  = Adafruit_GFX();
   
 
 };
