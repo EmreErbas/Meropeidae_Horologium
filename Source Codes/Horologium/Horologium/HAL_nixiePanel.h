@@ -4,6 +4,9 @@
 #include "is31fl3731.h"  
 #include "Adafruit_GFX.h"
 
+#define WIDTH  36       ///< This is the 'raw' display width  - never changes
+#define HEIGHT 16       ///< This is the 'raw' display height - never changes
+
 /**************************************************************************/
 /*!
     @brief Constructor for nixiePanel
@@ -15,7 +18,7 @@ public:
   nixiePanel(void);
   bool begin(void);
   void demoShow(void);
-
+  void demoFont(void);
 
 protected:
 
@@ -28,8 +31,8 @@ private:
   is31fl3731 driverLeftBottom   = is31fl3731();
   is31fl3731 driverRightBottom  = is31fl3731();
 
-  Adafruit_GFX myGFX  = Adafruit_GFX(36, 16);
-
+  Adafruit_GFX myGFX  = Adafruit_GFX();
+  
 
 };
 #endif

@@ -5,10 +5,11 @@ nixiePanel myNixiePanel = nixiePanel();
 void setup() 
 {
   myNixiePanel.begin();
+  
 }
 
 
 void loop() 
 {
-  myNixiePanel.demoShow();
+  myNixiePanel.demoFont();
 }
