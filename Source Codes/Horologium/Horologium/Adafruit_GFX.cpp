@@ -34,6 +34,10 @@ POSSIBILITY OF SUCH DAMAGE.
 #include "Adafruit_GFX.h"
 #include "GFX/glcdfont.c"
 
+#include "image.c"
+
+#include <math.h> 
+
 
 // Many (but maybe not all) non-AVR board installs define macros
 // for compatibility with existing PROGMEM-reading AVR code.
@@ -928,25 +932,24 @@ void Adafruit_GFX::drawGrayscaleBitmap(int16_t x, int16_t y, uint8_t *bitmap,
     @param    h   Height of bitmap in pixels
 */
 /**************************************************************************/
-void Adafruit_GFX::drawGrayscaleBitmap(int16_t x, int16_t y,
-                                       const uint8_t bitmap[],
-                                       const uint8_t mask[], int16_t w,
-                                       int16_t h) {
-  int16_t bw = (w + 7) / 8; // Bitmask scanline pad = whole byte
-  uint8_t b = 0;
-  startWrite();
-  for (int16_t j = 0; j < h; j++, y++) {
-    for (int16_t i = 0; i < w; i++) {
-      if (i & 7)
-        b <<= 1;
-      else
-        b = pgm_read_byte(&mask[j * bw + i / 8]);
-      if (b & 0x80) {
-        writePixel(x + i, y, (uint8_t)pgm_read_byte(&bitmap[j * w + i]));
-      }
+void Adafruit_GFX::drawGrayscaleBitmap(int16_t x, int16_t y, int16_t w,int16_t h) 
+{
+  float gamma = (float)y / 10.0;
+
+  uint8_t gamma8[256];
+
+  for (int16_t i = 0; i < 256; i++) 
+  {
+    gamma8[i] = round(255.0 * powf(((float)i / 255.0), gamma));
+  }
+
+  for (int16_t j = 0; j < h; j++) 
+  {
+    for (int16_t i = 0; i < w; i++) 
+    {
+      writePixel(i, j, gamma8[image_data_Image[(x * 36) + (i + (j * 36))]]);
     }
   }
-  endWrite();
 }
 
 /**************************************************************************/

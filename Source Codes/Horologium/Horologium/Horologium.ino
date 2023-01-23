@@ -11,18 +11,24 @@ void setup()
 
 void loop() 
 {
-  uint32_t lineX;
+  uint32_t lineX, lineY = 10;
 
   while(1)
   {
     myNixiePanel.myGFX.fillScreen(0);
-    
-    myNixiePanel.myGFX.drawCircle(17, 7, (lineX % 16), 255); 
+  
+    myNixiePanel.myGFX.drawGrayscaleBitmap(lineX, lineY, 36, 16); 
     //myNixiePanel.myGFX.drawCircle(17, 7, (lineX % 16), 255);
     //myNixiePanel.myGFX.writeFastVLine(0, 35, (lineX % 16), 255);
     //myNixiePanel.myGFX.drawCircle(0, (lineX % 16), 35, 14 - (lineX % 16), 255);
     myNixiePanel.demoFont();
     lineX ++;
+    if(lineX > 30)
+    {
+      lineX = 0;
+      lineY ++;
+    }
+
   }
 
 }
