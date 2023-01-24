@@ -18,6 +18,12 @@
              Also, I need to focus on the speed of communication. I am sending all the pixels from the beginning 
              to change a single pixel. Speed is quite essential in that case. But of course, I need to find another 
              way to scan the screen.
+             
+<b>24-Jun-2023</b>  Every function on the panel works perfectly. Gamma correction was clearly needed and I applied it. 
+             It looks like we can get very successful results somewhere between 1.6-2.0.
+             I only have one issue with the system. Unfortunately, it's running extremely slow, processes with I2C. 
+             Strangely, it doesn't look like it's directly connected. So I'm not entirely sure what is the source 
+             of this delay. Now is the time to focus on that.
 
 </pre>
 
