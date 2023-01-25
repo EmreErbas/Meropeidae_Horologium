@@ -936,18 +936,18 @@ void Adafruit_GFX::drawGrayscaleBitmap(int16_t x, int16_t y, int16_t w,int16_t h
 {
   float gamma = (float)y / 10.0;
 
-  uint8_t gamma8[256];
+  uint8_t correctionArray[256];
 
   for (int16_t i = 0; i < 256; i++) 
   {
-    gamma8[i] = round(255.0 * powf(((float)i / 255.0), gamma));
+    correctionArray[i] = round(255.0 * powf(((float)i / 255.0), gamma));
   }
 
   for (int16_t j = 0; j < h; j++) 
   {
     for (int16_t i = 0; i < w; i++) 
     {
-      writePixel(i, j, gamma8[image_data_Image[(x * 36) + (i + (j * 36))]]);
+      writePixel(i, j, correctionArray[image_data_Image[(x * 36) + (i + (j * 36))]]);
     }
   }
 }
