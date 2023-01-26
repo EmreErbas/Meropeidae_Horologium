@@ -12,7 +12,7 @@
              bootloader feature in the current library. Although I could download some simple codes, I cannot 
              download them again without entering the factory-boot-mode
 
-<b>15-Jun-2023</b>  I saw the first light today. The PCB is working like a charm. I didn't have to change anything on the 
+<b>16-Jun-2023</b>  I saw the first light today. The PCB is working like a charm. I didn't have to change anything on the 
              hardware. But probably using two individual I2C will be a bit painful. Maybe it is wise to convert 
              the circuit for a single bus.
              Also, I need to focus on the speed of communication. I am sending all the pixels from the beginning 
