@@ -11,10 +11,16 @@ void setup()
 
 void loop() 
 {
-  uint32_t lineX, lineY = 10;
+  volatile uint32_t lineX, lineY = 10, delayX;
 
   while(1)
   {
+    delayX = 10000000;
+    while(delayX)
+    {
+      delayX -= 1;
+    }
+
     myNixiePanel.myGFX.fillScreen(0);
   
     myNixiePanel.myGFX.drawGrayscaleBitmap(lineX, lineY, 36, 16); 
