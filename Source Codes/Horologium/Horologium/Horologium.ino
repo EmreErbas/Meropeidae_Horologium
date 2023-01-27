@@ -11,15 +11,10 @@ void setup()
 
 void loop() 
 {
-  volatile uint32_t lineX, lineY = 10, delayX;
+  uint32_t lineX, lineY = 10;
 
   while(1)
   {
-    delayX = 10000000;
-    while(delayX)
-    {
-      delayX -= 1;
-    }
 
     myNixiePanel.myGFX.fillScreen(0);
   

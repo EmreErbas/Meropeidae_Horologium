@@ -120,9 +120,8 @@ void is31fl3731::clear(void) {
     @param pwm brightnes, from 0 (off) to 255 (max on)
 */
 /**************************************************************************/
-void is31fl3731::setLEDPWM(uint8_t lednum, uint8_t pwm, uint8_t bank) {
-  if (lednum >= 144)
-    return;
+void is31fl3731::setLEDPWM(uint8_t lednum, uint8_t pwm, uint8_t bank) 
+{
   writeRegister8(bank, 0x24 + lednum, pwm);
 }
 

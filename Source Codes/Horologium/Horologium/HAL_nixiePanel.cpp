@@ -101,34 +101,36 @@ void nixiePanel::demoFont(void)
 {
   driverLeftTop.begin(0x77, &DefaultLine);
   driverRightTop.begin(0x74, &DefaultLine);
+
+  uint8_t cmd1[145];
+  uint8_t cmd2[145];
+  
+  cmd1[0] = 0x24;
+  cmd2[0] = 0x24;
+  
   for (uint8_t y = 0; y < 9; y++)
   {
     for (uint8_t x = 0; x < 16; x++)
     {
       if(x < 8)
       {
-        driverLeftTop.setLEDPWM(x + (y << 4), myGFX.ScreenBuffer[y + 8][7 - x]);
+        cmd1[1 + x + (y << 4)] = myGFX.ScreenBuffer[y + 8][7 - x];
+        cmd2[1 + x + (y << 4)] = myGFX.ScreenBuffer[18 + (y + 8)][7 - x];
+
       }
       else
       {
-        driverLeftTop.setLEDPWM(x + (y << 4), myGFX.ScreenBuffer[y][15 - x]);
+        cmd1[1 + x + (y << 4)] = myGFX.ScreenBuffer[y][15 - x];
+        cmd2[1 + x + (y << 4)] = myGFX.ScreenBuffer[18 + y][15 - x];
       }
     }
-  }
-  for (uint8_t y = 0; y < 9; y++)
-  {
-    for (uint8_t x = 0; x < 16; x++)
-    {
-      if(x < 8)
-      {
-        driverRightTop.setLEDPWM(x + (y << 4), myGFX.ScreenBuffer[18 + (y + 8)][7 - x]);
-      }
-      else
-      {
-        driverRightTop.setLEDPWM(x + (y << 4), myGFX.ScreenBuffer[18 + y][15 - x]);
-      }
-    }
-  }
+  }   
+  driverLeftTop.selectBank(0);
+  driverLeftTop._i2c_dev->write(cmd1, 145);
+
+  driverRightTop.selectBank(0);
+  driverRightTop._i2c_dev->write(cmd2, 145);
+
   driverLeftTop.end();
   driverRightTop.end();
 
@@ -140,28 +142,22 @@ void nixiePanel::demoFont(void)
     {
       if(x < 8)
       {
-        driverLeftBottom.setLEDPWM((15 - x) + ((8 - y) << 4), myGFX.ScreenBuffer[y + 8][8 + (7 - x)]);
+        cmd1[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[y + 8][8 + (7 - x)];
+        cmd2[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[18 + (y + 8)][8 + (7 - x)];
       }
       else
       {
-        driverLeftBottom.setLEDPWM((15 - x) + ((8 - y) << 4), myGFX.ScreenBuffer[y][8 + (15 - x)]);
+        cmd1[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[y][8 + (15 - x)];
+        cmd2[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[18 + y][8 + (15 - x)];
       }
     }
   }
-  for (uint8_t y = 0; y < 9; y++)
-  {
-    for (uint8_t x = 0; x < 16; x++)
-    {
-      if(x < 8)
-      {
-        driverRightBottom.setLEDPWM((15 - x) + ((8 - y) << 4), myGFX.ScreenBuffer[18 + (y + 8)][8 + (7 - x)]);
-      }
-      else
-      {
-        driverRightBottom.setLEDPWM((15 - x) + ((8 - y) << 4), myGFX.ScreenBuffer[18 + y][8 + (15 - x)]);
-      }
-    }
-  }
+  driverLeftBottom.selectBank(0);
+  driverLeftBottom._i2c_dev->write(cmd1, 145);
+
+  driverRightBottom.selectBank(0);
+  driverRightBottom._i2c_dev->write(cmd2, 145);
+
   driverLeftBottom.end();
   driverRightBottom.end();
 }
