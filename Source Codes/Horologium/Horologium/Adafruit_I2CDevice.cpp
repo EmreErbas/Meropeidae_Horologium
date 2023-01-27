@@ -1,4 +1,5 @@
 #include "Adafruit_I2CDevice.h"
+#define I2C_BUFFER_LENGTH 255
 
 //#define DEBUG_SERIAL Serial
 
@@ -12,13 +13,7 @@ Adafruit_I2CDevice::Adafruit_I2CDevice(uint8_t addr, TwoWire *theWire)
   _addr = addr;
   _wire = theWire;
   _begun = false;
-#ifdef ARDUINO_ARCH_SAMD
-  _maxBufferSize = 250; // as defined in Wire.h's RingBuffer
-#elif defined(ESP32)
-  _maxBufferSize = I2C_BUFFER_LENGTH;
-#else
-  _maxBufferSize = 32;
-#endif
+  _maxBufferSize = I2C_BUFFER_LENGTH;//I2C_BUFFER_LENGTH;
 }
 
 /*!

@@ -18,13 +18,13 @@ void loop()
 
     myNixiePanel.myGFX.fillScreen(0);
   
-    myNixiePanel.myGFX.drawGrayscaleBitmap(lineX, lineY, 36, 16); 
+    myNixiePanel.myGFX.drawGrayscaleBitmap(lineX, 20, 36, 16); 
     //myNixiePanel.myGFX.drawCircle(17, 7, (lineX % 16), 255);
     //myNixiePanel.myGFX.writeFastVLine(0, 35, (lineX % 16), 255);
     //myNixiePanel.myGFX.drawCircle(0, (lineX % 16), 35, 14 - (lineX % 16), 255);
     myNixiePanel.demoFont();
     lineX ++;
-    if(lineX > 30)
+    if(lineX > 150)
     {
       lineX = 0;
       lineY ++;
