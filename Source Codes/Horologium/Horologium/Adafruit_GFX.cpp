@@ -713,10 +713,8 @@ void Adafruit_GFX::fillTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
     @param    h   Height of bitmap in pixels
 */
 /**************************************************************************/
-void Adafruit_GFX::drawGrayscaleBitmap(int16_t x, int16_t y, int16_t w,int16_t h) 
+void Adafruit_GFX::drawGrayscaleBitmap(float horizontal, float gamma, int16_t w,int16_t h) 
 {
-  float gamma = (float)y / 10.0;
-
   uint8_t correctionArray[256];
 
   for (int16_t i = 0; i < 256; i++) 
@@ -728,8 +726,12 @@ void Adafruit_GFX::drawGrayscaleBitmap(int16_t x, int16_t y, int16_t w,int16_t h
   {
     for (int16_t i = 0; i < w; i++) 
     {
-//    writePixel(i, j, correctionArray[   image_data_Image[   (x * 36) + (i + (j * 36))   ]   ]);
-      writePixel(i, j, correctionArray[   image_data_Image[  (x * 180) + ((i * 5) + (j * 900))   ]   ]);
+      float upper, lower, gain, overall;
+      upper = correctionArray[   image_data_Image[   ((uint16_t)horizontal * 36) + (i + (j * 36))   ]   ];
+      lower = correctionArray[   image_data_Image[   (((uint16_t)horizontal + 1) * 36) + (i + (j * 36))   ]   ];
+      gain = horizontal - (uint16_t)horizontal;
+      overall = (lower * gain) + (upper * (1-gain));
+      writePixel(i, j, (uint16_t)overall);   
     }
   }
 }

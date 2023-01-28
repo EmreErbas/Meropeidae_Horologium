@@ -76,7 +76,7 @@ public:
                      int16_t radius, uint8_t color);
   void fillRoundRect(int16_t x0, int16_t y0, int16_t w, int16_t h,
                      int16_t radius, uint8_t color);
-  void drawGrayscaleBitmap(int16_t x, int16_t y,  
+  void drawGrayscaleBitmap(float horizontal, float gamma,
                            int16_t w, int16_t h);
   void drawChar(int16_t x, int16_t y, unsigned char c, uint8_t color,
                 uint16_t bg, uint8_t size);
