@@ -24,6 +24,8 @@
              I only have one issue with the system. Unfortunately, it's running extremely slow, processes with I2C. 
              Strangely, it doesn't look like it's directly connected. So I'm not entirely sure what is the source 
              of this delay. Now is the time to focus on that.
+                           
+<b>29-Jun-2023</b>  Interpolation and gamma correction is working like a charm. Its feeling is very flawless. 
 
 </pre>
 
