@@ -2,7 +2,10 @@
 #define _ADAFRUIT_GFX_H
 
 #include <Arduino.h>
+#include <Print.h>
 #include "GFX/gfxfont.h"
+#include "GFX/Fonts/FreeMono18pt7b.h"
+
 
 /// A generic graphics superclass that can handle all sorts of drawing. At a
 /// minimum you can subclass and provide drawPixel(). At a maximum you can do a
@@ -13,7 +16,7 @@
 #ifndef HEIGHT
   #define HEIGHT 16       ///< This is the 'raw' display height - never changes
 #endif
-class Adafruit_GFX  
+class Adafruit_GFX : public Print
 {
 
 public:
@@ -58,24 +61,6 @@ public:
   // Optional and probably not necessary to change
   void drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
                         uint8_t color);
-  void drawRect(int16_t x, int16_t y, int16_t w, int16_t h,
-                        uint8_t color);
-
-  // These exist only with Adafruit_GFX (no subclass overrides)
-  void drawCircle(int16_t x0, int16_t y0, int16_t r, uint8_t color);
-  void drawCircleHelper(int16_t x0, int16_t y0, int16_t r, uint8_t cornername,
-                        uint8_t color);
-  void fillCircle(int16_t x0, int16_t y0, int16_t r, uint8_t color);
-  void fillCircleHelper(int16_t x0, int16_t y0, int16_t r, uint8_t cornername,
-                        int16_t delta, uint8_t color);
-  void drawTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2,
-                    int16_t y2, uint8_t color);
-  void fillTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2,
-                    int16_t y2, uint8_t color);
-  void drawRoundRect(int16_t x0, int16_t y0, int16_t w, int16_t h,
-                     int16_t radius, uint8_t color);
-  void fillRoundRect(int16_t x0, int16_t y0, int16_t w, int16_t h,
-                     int16_t radius, uint8_t color);
   void drawGrayscaleBitmap(float horizontal, float gamma,
                            int16_t w, int16_t h);
   void drawChar(int16_t x, int16_t y, unsigned char c, uint8_t color,
@@ -150,6 +135,13 @@ public:
   */
   /**********************************************************************/
   void cp437(bool x = true) { _cp437 = x; }
+
+  using Print::write;
+#if ARDUINO >= 100
+  virtual size_t write(uint8_t);
+#else
+  virtual void write(uint8_t);
+#endif  
 
   /************************************************************************/
   /*!

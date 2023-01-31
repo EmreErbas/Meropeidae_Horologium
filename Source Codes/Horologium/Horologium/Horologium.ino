@@ -15,6 +15,10 @@ void loop()
 
   while(1)
   {
+    myNixiePanel.myGFX.setFont(&FreeMono18pt7b);
+    myNixiePanel.myGFX.drawChar(0, 0, 'E', 0xFF, 0x00, 10);
+
+    
 
     myNixiePanel.myGFX.fillScreen(0);
   
