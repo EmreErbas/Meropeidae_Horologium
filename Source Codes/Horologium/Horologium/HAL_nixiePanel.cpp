@@ -102,11 +102,14 @@ void nixiePanel::demoFont(void)
   driverLeftTop.begin(0x77, &DefaultLine);
   driverRightTop.begin(0x74, &DefaultLine);
 
-  uint8_t cmd1[145];
-  uint8_t cmd2[145];
+  uint8_t cmd1[101], cmd1b[45];
+  uint8_t cmd2[145], cmd2b[45];
   
-  cmd1[0] = 0x24;
-  cmd2[0] = 0x24;
+  cmd1[0] = 36;
+  cmd2[0] = 36;
+    
+  cmd1b[0] = 136;
+  cmd2b[0] = 136;
   
   for (uint8_t y = 0; y < 9; y++)
   {
@@ -114,22 +117,39 @@ void nixiePanel::demoFont(void)
     {
       if(x < 8)
       {
-        cmd1[1 + x + (y << 4)] = myGFX.ScreenBuffer[y + 8][7 - x];
-        cmd2[1 + x + (y << 4)] = myGFX.ScreenBuffer[18 + (y + 8)][7 - x];
-
+        if(1 + x + (y << 4) < 101)
+        {
+          cmd1[1 + x + (y << 4)] = myGFX.ScreenBuffer[y + 8][7 - x];
+          cmd2[1 + x + (y << 4)] = myGFX.ScreenBuffer[18 + (y + 8)][7 - x];
+        }
+        else
+        {
+          cmd1b[1 + x + (y << 4) - 100] = myGFX.ScreenBuffer[y + 8][7 - x];
+          cmd2b[1 + x + (y << 4) - 100] = myGFX.ScreenBuffer[18 + (y + 8)][7 - x];
+        }        
       }
       else
       {
-        cmd1[1 + x + (y << 4)] = myGFX.ScreenBuffer[y][15 - x];
-        cmd2[1 + x + (y << 4)] = myGFX.ScreenBuffer[18 + y][15 - x];
+        if(1 + x + (y << 4) < 101)
+        {
+          cmd1[1 + x + (y << 4)] = myGFX.ScreenBuffer[y][15 - x];
+          cmd2[1 + x + (y << 4)] = myGFX.ScreenBuffer[18 + y][15 - x];
+        }
+        else
+        {
+          cmd1b[1 + x + (y << 4) - 100] = myGFX.ScreenBuffer[y][15 - x];
+          cmd2b[1 + x + (y << 4) - 100] = myGFX.ScreenBuffer[18 + y][15 - x];  
+        }    
       }
     }
   }   
   driverLeftTop.selectBank(0);
-  driverLeftTop._i2c_dev->write(cmd1, 145);
+  driverLeftTop._i2c_dev->write(cmd1, 101);
+  driverLeftTop._i2c_dev->write(cmd1b, 45);
 
   driverRightTop.selectBank(0);
-  driverRightTop._i2c_dev->write(cmd2, 145);
+  driverRightTop._i2c_dev->write(cmd2, 101);
+  driverRightTop._i2c_dev->write(cmd2b, 45);
 
   driverLeftTop.end();
   driverRightTop.end();
@@ -142,21 +162,39 @@ void nixiePanel::demoFont(void)
     {
       if(x < 8)
       {
-        cmd1[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[y + 8][8 + (7 - x)];
-        cmd2[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[18 + (y + 8)][8 + (7 - x)];
+        if(1 + (15 - x) + ((8 - y) << 4) < 101)
+        {
+          cmd1[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[y + 8][8 + (7 - x)];
+          cmd2[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[18 + (y + 8)][8 + (7 - x)];
+        }
+        else
+        {
+          cmd1b[1 + (15 - x) + ((8 - y) << 4) - 100] = myGFX.ScreenBuffer[y + 8][8 + (7 - x)];
+          cmd2b[1 + (15 - x) + ((8 - y) << 4) - 100] = myGFX.ScreenBuffer[18 + (y + 8)][8 + (7 - x)];
+        }   
       }
       else
       {
-        cmd1[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[y][8 + (15 - x)];
-        cmd2[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[18 + y][8 + (15 - x)];
+        if(1 + (15 - x) + ((8 - y) << 4) < 101)
+        {
+          cmd1[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[y][8 + (15 - x)];
+          cmd2[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[18 + y][8 + (15 - x)];
+        }
+        else
+        {
+          cmd1b[1 + (15 - x) + ((8 - y) << 4) - 100] = myGFX.ScreenBuffer[y][8 + (15 - x)];
+          cmd2b[1 + (15 - x) + ((8 - y) << 4) - 100] = myGFX.ScreenBuffer[18 + y][8 + (15 - x)]; 
+        } 
       }
     }
   }
   driverLeftBottom.selectBank(0);
-  driverLeftBottom._i2c_dev->write(cmd1, 145);
+  driverLeftBottom._i2c_dev->write(cmd1, 101);
+  driverLeftBottom._i2c_dev->write(cmd1b, 45);
 
   driverRightBottom.selectBank(0);
-  driverRightBottom._i2c_dev->write(cmd2, 145);
+  driverRightBottom._i2c_dev->write(cmd2, 101);
+  driverRightBottom._i2c_dev->write(cmd2b, 45);
 
   driverLeftBottom.end();
   driverRightBottom.end();

@@ -5,7 +5,8 @@
 #include <Print.h>
 #include "GFX/gfxfont.h"
 #include "GFX/Fonts/FreeMono18pt7b.h"
-
+#include "GFX/Fonts/FreeMono12pt7b.h"
+#include "GFX/Fonts/FreeSansOblique9pt7b.h"
 
 /// A generic graphics superclass that can handle all sorts of drawing. At a
 /// minimum you can subclass and provide drawPixel(). At a maximum you can do a
