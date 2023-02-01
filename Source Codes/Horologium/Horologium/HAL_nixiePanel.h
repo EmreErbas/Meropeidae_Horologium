@@ -7,6 +7,24 @@
 #define WIDTH  36       ///< This is the 'raw' display width  - never changes
 #define HEIGHT 16       ///< This is the 'raw' display height - never changes
 
+// https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf#page=48
+#define defaultLine_SCK 4
+#define defaultLine_SDA 3
+
+#define alteredLine_SCK 5
+#define alteredLine_SDA 3
+
+#define driverLeftTop_ID     0x77
+#define driverRightTop_ID    0x74
+#define driverLeftBottom_ID  0x77
+#define driverRightBottom_ID 0x74
+
+#define PixelsGrouped 72  // for combining the brightness data of 72 pixels
+#define PixelsTotal   144 // total number of pixels per driver
+
+
+
+
 /**************************************************************************/
 /*!
     @brief Constructor for nixiePanel
@@ -17,8 +35,7 @@ class nixiePanel
 public:
   nixiePanel(void);
   bool begin(void);
-  void demoShow(void);
-  void demoFont(void);
+  void updateScreen(void);
 
   Adafruit_GFX myGFX  = Adafruit_GFX();
 protected:

@@ -23,6 +23,8 @@
 #define ISSI_COMMANDREGISTER 0xFD
 #define ISSI_BANK_FUNCTIONREG 0x0B // helpfully called 'page nine'
 
+#define ISSI_PIXEL_StartAddress 0x24
+
 /**************************************************************************/
 /*!
     @brief Constructor for IS31FL3731

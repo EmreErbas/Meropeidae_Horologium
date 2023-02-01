@@ -15,20 +15,20 @@ nixiePanel::nixiePanel(void)
 /**************************************************************************/
 bool nixiePanel::begin(void) 
 {
-  // https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf#page=48
-  // https://github.com/EmreErbas/Meropeidae_Horologium/blob/main/Documents/Notes/03-How%20to%20program%20ESP32-S3.md
-  DefaultLine.setPins(3, 4);
-  AlteredLine.setPins(3, 5);
+  // Altered bus uses the same data line but has different clock line. If the code wants to
+  // reach another drivers that have the same IDs, it needs to change the clock line.
+  DefaultLine.setPins(defaultLine_SDA, defaultLine_SCK);
+  AlteredLine.setPins(alteredLine_SDA, alteredLine_SCK);
 
-  driverLeftTop.begin(0x77, &DefaultLine);
-  driverRightTop.begin(0x74, &DefaultLine);
+  driverLeftTop.begin(driverLeftTop_ID, &DefaultLine);
+  driverRightTop.begin(driverRightTop_ID, &DefaultLine);
   driverLeftTop.hardClear();
   driverRightTop.hardClear();
   driverLeftTop.end();
   driverRightTop.end(); 
 
-  driverLeftBottom.begin(0x77, &AlteredLine);  
-  driverRightBottom.begin(0x74, &AlteredLine);
+  driverLeftBottom.begin(driverLeftBottom_ID, &AlteredLine);  
+  driverRightBottom.begin(driverRightBottom_ID, &AlteredLine);
   driverLeftBottom.hardClear();
   driverRightBottom.hardClear();
   driverLeftBottom.end();
@@ -36,165 +36,107 @@ bool nixiePanel::begin(void)
   return true;
 }
 
-
-void nixiePanel::demoShow(void) 
+void nixiePanel::updateScreen(void) 
 {
-  // The lookup table to make the brightness changes be more visible
-  const static uint8_t sweep[] = 
-  {
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 29, 32, 35, 38, 41, 44, 
-    47, 44, 41, 38, 35, 32, 29, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 7, 6, 5, 4, 3, 2, 1
-  };
-
-  driverLeftTop.begin(0x77, &DefaultLine);
-  driverRightTop.begin(0x74, &DefaultLine);
-  for (uint8_t incr = 0; incr < 48; incr+=2)
-  {
-    for (uint8_t x = 0; x < 16; x++)
-    {
-      for (uint8_t y = 0; y < 9; y++)
-      {
-        driverLeftTop.setLEDPWM(x + (y << 4), sweep[(x + y + incr + 2) % 48]);
-      }
-    }
-  }
-  for (uint8_t incr = 0; incr < 48; incr+=2)
-  {
-    for (uint8_t x = 0; x < 16; x++)
-    {
-      for (uint8_t y = 0; y < 9; y++)
-      {
-        driverRightTop.setLEDPWM(x + (y << 4), sweep[(x + y + incr) % 48]);    
-      }
-    }
-  }
-  driverLeftTop.end();
-  driverRightTop.end();
-
-  driverLeftBottom.begin(0x77, &AlteredLine);  
-  driverRightBottom.begin(0x74, &AlteredLine);
-  for (uint8_t incr = 0; incr < 48; incr+=2)
-  {
-    for (uint8_t x = 0; x < 16; x++)
-    {
-      for (uint8_t y = 0; y < 9; y++)
-      {  
-        driverLeftBottom.setLEDPWM(x + (y << 4), sweep[(x + y + incr + 2) % 48]); 
-      }
-    }
-  }
-  for (uint8_t incr = 0; incr < 48; incr+=2)
-  {
-    for (uint8_t x = 0; x < 16; x++)
-    {
-      for (uint8_t y = 0; y < 9; y++)
-      {  
-        driverRightBottom.setLEDPWM(x + (y << 4), sweep[(x + y + incr) % 48]); 
-      }
-    }
-  }
-  driverLeftBottom.end();
-  driverRightBottom.end();
-}
-
-void nixiePanel::demoFont(void) 
-{
-  driverLeftTop.begin(0x77, &DefaultLine);
-  driverRightTop.begin(0x74, &DefaultLine);
-
-  uint8_t cmd1[101], cmd1b[45];
-  uint8_t cmd2[145], cmd2b[45];
+  uint8_t pixelArrayBuffer1[1 + PixelsGrouped], 
+          pixelArrayBuffer2[1 + (PixelsTotal - PixelsGrouped)],
+          pixelArrayBuffer3[1 + PixelsGrouped], 
+          pixelArrayBuffer4[1 + (PixelsTotal - PixelsGrouped)];
   
-  cmd1[0] = 36;
-  cmd2[0] = 36;
+  pixelArrayBuffer1[0] = ISSI_PIXEL_StartAddress;
+  pixelArrayBuffer3[0] = ISSI_PIXEL_StartAddress;
     
-  cmd1b[0] = 136;
-  cmd2b[0] = 136;
-  
+  pixelArrayBuffer2[0] = ISSI_PIXEL_StartAddress + PixelsGrouped;
+  pixelArrayBuffer4[0] = ISSI_PIXEL_StartAddress + PixelsGrouped;
+
+  //For top-left and top-right drivers. Rotating, scaling, grouping and sending
+  driverLeftTop.begin(driverLeftTop_ID, &DefaultLine);
+  driverRightTop.begin(driverRightTop_ID, &DefaultLine);  
   for (uint8_t y = 0; y < 9; y++)
   {
     for (uint8_t x = 0; x < 16; x++)
     {
       if(x < 8)
       {
-        if(1 + x + (y << 4) < 101)
+        if(x + (y << 4) < PixelsGrouped)
         {
-          cmd1[1 + x + (y << 4)] = myGFX.ScreenBuffer[y + 8][7 - x];
-          cmd2[1 + x + (y << 4)] = myGFX.ScreenBuffer[18 + (y + 8)][7 - x];
+          pixelArrayBuffer1[1 + x + (y << 4)] = myGFX.ScreenBuffer[y + 8][7 - x];
+          pixelArrayBuffer3[1 + x + (y << 4)] = myGFX.ScreenBuffer[18 + (y + 8)][7 - x];
         }
         else
         {
-          cmd1b[1 + x + (y << 4) - 100] = myGFX.ScreenBuffer[y + 8][7 - x];
-          cmd2b[1 + x + (y << 4) - 100] = myGFX.ScreenBuffer[18 + (y + 8)][7 - x];
+          pixelArrayBuffer2[1 + x + (y << 4) - PixelsGrouped] = myGFX.ScreenBuffer[y + 8][7 - x];
+          pixelArrayBuffer4[1 + x + (y << 4) - PixelsGrouped] = myGFX.ScreenBuffer[18 + (y + 8)][7 - x];
         }        
       }
       else
       {
-        if(1 + x + (y << 4) < 101)
+        if(x + (y << 4) < PixelsGrouped)
         {
-          cmd1[1 + x + (y << 4)] = myGFX.ScreenBuffer[y][15 - x];
-          cmd2[1 + x + (y << 4)] = myGFX.ScreenBuffer[18 + y][15 - x];
+          pixelArrayBuffer1[1 + x + (y << 4)] = myGFX.ScreenBuffer[y][15 - x];
+          pixelArrayBuffer3[1 + x + (y << 4)] = myGFX.ScreenBuffer[18 + y][15 - x];
         }
         else
         {
-          cmd1b[1 + x + (y << 4) - 100] = myGFX.ScreenBuffer[y][15 - x];
-          cmd2b[1 + x + (y << 4) - 100] = myGFX.ScreenBuffer[18 + y][15 - x];  
+          pixelArrayBuffer2[1 + x + (y << 4) - PixelsGrouped] = myGFX.ScreenBuffer[y][15 - x];
+          pixelArrayBuffer4[1 + x + (y << 4) - PixelsGrouped] = myGFX.ScreenBuffer[18 + y][15 - x];  
         }    
       }
     }
   }   
   driverLeftTop.selectBank(0);
-  driverLeftTop._i2c_dev->write(cmd1, 101);
-  driverLeftTop._i2c_dev->write(cmd1b, 45);
+  driverLeftTop._i2c_dev->write(pixelArrayBuffer1, 1 + PixelsGrouped);
+  driverLeftTop._i2c_dev->write(pixelArrayBuffer2, 1 + (PixelsTotal - PixelsGrouped));
 
   driverRightTop.selectBank(0);
-  driverRightTop._i2c_dev->write(cmd2, 101);
-  driverRightTop._i2c_dev->write(cmd2b, 45);
+  driverRightTop._i2c_dev->write(pixelArrayBuffer3, 1 + PixelsGrouped);
+  driverRightTop._i2c_dev->write(pixelArrayBuffer4, 1 + (PixelsTotal - PixelsGrouped));
 
   driverLeftTop.end();
   driverRightTop.end();
 
-  driverLeftBottom.begin(0x77, &AlteredLine);  
-  driverRightBottom.begin(0x74, &AlteredLine);
+  //For bottom-left and bottom-right drivers. Rotating, scaling, grouping and sending
+  driverLeftBottom.begin(driverLeftBottom_ID, &AlteredLine);  
+  driverRightBottom.begin(driverRightBottom_ID, &AlteredLine);
   for (uint8_t y = 0; y < 9; y++)
   {
     for (uint8_t x = 0; x < 16; x++)
     {
       if(x < 8)
       {
-        if(1 + (15 - x) + ((8 - y) << 4) < 101)
+        if((15 - x) + ((8 - y) << 4) < PixelsGrouped)
         {
-          cmd1[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[y + 8][8 + (7 - x)];
-          cmd2[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[18 + (y + 8)][8 + (7 - x)];
+          pixelArrayBuffer1[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[y + 8][8 + (7 - x)];
+          pixelArrayBuffer3[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[18 + (y + 8)][8 + (7 - x)];
         }
         else
         {
-          cmd1b[1 + (15 - x) + ((8 - y) << 4) - 100] = myGFX.ScreenBuffer[y + 8][8 + (7 - x)];
-          cmd2b[1 + (15 - x) + ((8 - y) << 4) - 100] = myGFX.ScreenBuffer[18 + (y + 8)][8 + (7 - x)];
+          pixelArrayBuffer2[1 + (15 - x) + ((8 - y) << 4) - PixelsGrouped] = myGFX.ScreenBuffer[y + 8][8 + (7 - x)];
+          pixelArrayBuffer4[1 + (15 - x) + ((8 - y) << 4) - PixelsGrouped] = myGFX.ScreenBuffer[18 + (y + 8)][8 + (7 - x)];
         }   
       }
       else
       {
-        if(1 + (15 - x) + ((8 - y) << 4) < 101)
+        if((15 - x) + ((8 - y) << 4) < PixelsGrouped)
         {
-          cmd1[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[y][8 + (15 - x)];
-          cmd2[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[18 + y][8 + (15 - x)];
+          pixelArrayBuffer1[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[y][8 + (15 - x)];
+          pixelArrayBuffer3[1 + (15 - x) + ((8 - y) << 4)] = myGFX.ScreenBuffer[18 + y][8 + (15 - x)];
         }
         else
         {
-          cmd1b[1 + (15 - x) + ((8 - y) << 4) - 100] = myGFX.ScreenBuffer[y][8 + (15 - x)];
-          cmd2b[1 + (15 - x) + ((8 - y) << 4) - 100] = myGFX.ScreenBuffer[18 + y][8 + (15 - x)]; 
+          pixelArrayBuffer2[1 + (15 - x) + ((8 - y) << 4) - PixelsGrouped] = myGFX.ScreenBuffer[y][8 + (15 - x)];
+          pixelArrayBuffer4[1 + (15 - x) + ((8 - y) << 4) - PixelsGrouped] = myGFX.ScreenBuffer[18 + y][8 + (15 - x)]; 
         } 
       }
     }
   }
   driverLeftBottom.selectBank(0);
-  driverLeftBottom._i2c_dev->write(cmd1, 101);
-  driverLeftBottom._i2c_dev->write(cmd1b, 45);
+  driverLeftBottom._i2c_dev->write(pixelArrayBuffer1, 1 + PixelsGrouped);
+  driverLeftBottom._i2c_dev->write(pixelArrayBuffer2, 1 + (PixelsTotal - PixelsGrouped));
 
   driverRightBottom.selectBank(0);
-  driverRightBottom._i2c_dev->write(cmd2, 101);
-  driverRightBottom._i2c_dev->write(cmd2b, 45);
+  driverRightBottom._i2c_dev->write(pixelArrayBuffer3, 1 + PixelsGrouped);
+  driverRightBottom._i2c_dev->write(pixelArrayBuffer4, 1 + (PixelsTotal - PixelsGrouped));
 
   driverLeftBottom.end();
   driverRightBottom.end();
