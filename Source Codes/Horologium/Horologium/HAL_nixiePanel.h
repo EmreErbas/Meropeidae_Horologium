@@ -23,8 +23,6 @@
 #define PixelsTotal   144 // total number of pixels per driver
 
 
-
-
 /**************************************************************************/
 /*!
     @brief Constructor for nixiePanel
@@ -37,19 +35,16 @@ public:
   bool begin(void);
   void updateScreen(void);
 
-  Adafruit_GFX myGFX  = Adafruit_GFX();
-protected:
+  Adafruit_GFX  myGFX               = Adafruit_GFX();
 
 private:
-  TwoWire DefaultLine = TwoWire(0);
-  TwoWire AlteredLine = TwoWire(1);
+  TwoWire       DefaultLine         = TwoWire(0);
+  TwoWire       AlteredLine         = TwoWire(1);
 
-  is31fl3731 driverLeftTop      = is31fl3731();
-  is31fl3731 driverRightTop     = is31fl3731();
-  is31fl3731 driverLeftBottom   = is31fl3731();
-  is31fl3731 driverRightBottom  = is31fl3731();
-
-  
+  is31fl3731    driverLeftTop       = is31fl3731();
+  is31fl3731    driverRightTop      = is31fl3731();
+  is31fl3731    driverLeftBottom    = is31fl3731();
+  is31fl3731    driverRightBottom   = is31fl3731();
 
 };
 #endif

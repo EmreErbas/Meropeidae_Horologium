@@ -22,15 +22,15 @@ bool nixiePanel::begin(void)
 
   driverLeftTop.begin(driverLeftTop_ID, &DefaultLine);
   driverRightTop.begin(driverRightTop_ID, &DefaultLine);
-  driverLeftTop.hardClear();
-  driverRightTop.hardClear();
+  driverLeftTop.softReset();
+  driverRightTop.softReset();
   driverLeftTop.end();
   driverRightTop.end(); 
 
   driverLeftBottom.begin(driverLeftBottom_ID, &AlteredLine);  
   driverRightBottom.begin(driverRightBottom_ID, &AlteredLine);
-  driverLeftBottom.hardClear();
-  driverRightBottom.hardClear();
+  driverLeftBottom.softReset();
+  driverRightBottom.softReset();
   driverLeftBottom.end();
   driverRightBottom.end(); 
   return true;

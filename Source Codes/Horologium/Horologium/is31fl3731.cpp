@@ -1,13 +1,5 @@
 #include "is31fl3731.h"
 
-#ifndef _swap_int16_t
-#define _swap_int16_t(a, b)                                                    \
-  {                                                                            \
-    int16_t t = a;                                                             \
-    a = b;                                                                     \
-    b = t;                                                                     \
-  }
-#endif
 
 /**************************************************************************/
 /*!
@@ -26,71 +18,56 @@ is31fl3731::is31fl3731(void)
     @returns True on success, false if chip isnt found
 */
 /**************************************************************************/
-bool is31fl3731::begin(uint8_t addr, TwoWire *theWire) {
-  if (_i2c_dev) {
+bool is31fl3731::begin(uint8_t addr, TwoWire *theWire) 
+{
+  if (_i2c_dev) 
+  {
     delete _i2c_dev;
   }
   _i2c_dev = new Adafruit_I2CDevice(addr, theWire);
 
-  if (!_i2c_dev->begin()) {
+  if (!_i2c_dev->begin()) 
+  {
     return false;
   }
 
   _i2c_dev->setSpeed(400000);
-  _frame = 0;
-
-/*
-  // shutdown
-  writeRegister8(ISSI_BANK_FUNCTIONREG, ISSI_REG_SHUTDOWN, 0x00);
-
-  delay(10);
-*/
-
-  // out of shutdown
-//  writeRegister8(ISSI_BANK_FUNCTIONREG, ISSI_REG_SHUTDOWN, 0x01);
 
   // picture mode
-  writeRegister8(ISSI_BANK_FUNCTIONREG, ISSI_REG_CONFIG,
-                 ISSI_REG_CONFIG_PICTUREMODE);
-
+  writeRegister8(ISSI_BANK_FUNCTIONREG, ISSI_REG_CONFIG, ISSI_REG_CONFIG_PICTUREMODE);
+  
+  _frame = 0;
   displayFrame(_frame);
-
-/*
-  // all LEDs on & 0 PWM
-  clear(); // set each led to 0 PWM
-
-  for (uint8_t f = 0; f < 8; f++) {
-    for (uint8_t i = 0; i <= 0x11; i++)
-      writeRegister8(f, i, 0xff); // each 8 LEDs on
-  }
-*/
-  audioSync(false);
 
   return true;
 }
 
-void is31fl3731::hardClear(void) {
+void is31fl3731::softReset(void) 
+{
   // shutdown
   writeRegister8(ISSI_BANK_FUNCTIONREG, ISSI_REG_SHUTDOWN, 0x00);
   delay(10);
   // out of shutdown
   writeRegister8(ISSI_BANK_FUNCTIONREG, ISSI_REG_SHUTDOWN, 0x01);
 
-  _frame = 0;
-  
   // all LEDs on & 0 PWM
   clear(); // set each led to 0 PWM
 
-  for (uint8_t f = 0; f < 8; f++) {
+  for (uint8_t f = 0; f < 8; f++) 
+  {
     for (uint8_t i = 0; i <= 0x11; i++)
+    {
       writeRegister8(f, i, 0xff); // each 8 LEDs on
+    }
   }
-  
+
+  _frame = 0;
   displayFrame(_frame);
 }
 
 
-void is31fl3731::end(void) {
+void is31fl3731::end(void) 
+{
   _i2c_dev->end();
 }
 
@@ -99,16 +76,19 @@ void is31fl3731::end(void) {
     @brief Sets all LEDs on & 0 PWM for current frame.
 */
 /**************************************************************************/
-void is31fl3731::clear(void) {
+void is31fl3731::clear(void) 
+{
+  uint8_t erasebuf[1 + 72];
+   
   selectBank(_frame);
-  uint8_t erasebuf[25];
+ 
+  memset(erasebuf, 0, 1 + 72);
+  
+  erasebuf[0] = 0x24;
+  _i2c_dev->write(erasebuf, 1 + 72);
 
-  memset(erasebuf, 0, 25);
-
-  for (uint8_t i = 0; i < 6; i++) {
-    erasebuf[0] = 0x24 + i * 24;
-    _i2c_dev->write(erasebuf, 25);
-  }
+  erasebuf[0] = 0x24 + 72;
+  _i2c_dev->write(erasebuf, 1 + 72);
 }
 
 /**************************************************************************/
@@ -123,44 +103,6 @@ void is31fl3731::clear(void) {
 void is31fl3731::setLEDPWM(uint8_t lednum, uint8_t pwm, uint8_t bank) 
 {
   writeRegister8(bank, 0x24 + lednum, pwm);
-}
-
-/**************************************************************************/
-/*!
-    @brief Adafruit GFX low level accesssor - sets a 8-bit PWM pixel value
-    handles rotation and pixel arrangement, unlike setLEDPWM
-    @param x The x position, starting with 0 for left-most side
-    @param y The y position, starting with 0 for top-most side
-    @param color Despite being a 16-bit value, takes 0 (off) to 255 (max on)
-*/
-/**************************************************************************/
-void is31fl3731::drawPixel(int16_t x, int16_t y, uint16_t color) {
-  // check rotation, move pixel around if necessary
-  // switch (getRotation()) {
-  switch (1) {
-  case 1:
-    _swap_int16_t(x, y);
-    x = 16 - x - 1;
-    break;
-  case 2:
-    x = 16 - x - 1;
-    y = 9 - y - 1;
-    break;
-  case 3:
-    _swap_int16_t(x, y);
-    y = 9 - y - 1;
-    break;
-  }
-
-  if ((x < 0) || (x >= 16))
-    return;
-  if ((y < 0) || (y >= 9))
-    return;
-  if (color > 255)
-    color = 255; // PWM 8bit max
-
-  setLEDPWM(x + y * 16, color, _frame);
-  return;
 }
 
 /**************************************************************************/
@@ -193,20 +135,6 @@ void is31fl3731::displayFrame(uint8_t frame) {
 bool is31fl3731::selectBank(uint8_t bank) {
   uint8_t cmd[2] = {ISSI_COMMANDREGISTER, bank};
   return _i2c_dev->write(cmd, 2);
-}
-
-/**************************************************************************/
-/*!
-    @brief Enable the audio 'sync' for brightness pulsing (not really tested)
-    @param sync True to enable, False to disable
-*/
-/**************************************************************************/
-void is31fl3731::audioSync(bool sync) {
-  if (sync) {
-    writeRegister8(ISSI_BANK_FUNCTIONREG, ISSI_REG_AUDIOSYNC, 0x1);
-  } else {
-    writeRegister8(ISSI_BANK_FUNCTIONREG, ISSI_REG_AUDIOSYNC, 0x0);
-  }
 }
 
 /**************************************************************************/
